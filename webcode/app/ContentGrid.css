@@ -1,0 +1,28 @@
+/* Main grid layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Spacing between grid items */
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Individual grid items */
+  .grid-item {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  /* Hover effect for grid items */
+  .grid-item:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
+  
