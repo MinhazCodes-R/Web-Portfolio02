@@ -35,32 +35,30 @@ const DeskTopPage = () => {
     
             {/* <MinhazCanva></MinhazCanva> */}
   
-            <div className="sticky top-0 z-50">
-  
-  
+             {/* <MinhazCanva></MinhazCanva> */}
+          <div className="w-[100vw]" style={{zIndex:'100',position:'fixed', top:'0px'}}>
             <Header></Header>
-            <div style={{height:"auto"}}>
+          </div>
+          <div style={{height:"auto"}}>
+  
+            <div className="" style={{position:'relative',top:'9vh',boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'}}>
+              <HeroHighlight
+              containerClassName="h-40"
+              className="text-4xl"
+              >
     
-              <div className="" style={{boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'}}>
-                <HeroHighlight
-                containerClassName="h-40"
-                className="text-4xl"
-                >
-      
-                <h1>I am a <Highlight><b>Computer Engineering</b></Highlight> student at McMaster</h1>
-      
-      
-                </HeroHighlight>
-              </div>
+              <h1>I am a <Highlight><b>Computer Engineering</b></Highlight> student at McMaster</h1>
+    
+    
+              </HeroHighlight>
             </div>
-  
-            </div>
-  
+          </div>
   
   
   
   
-            <div className="sticky content-center top-56 z-20" style={{overflow:"hidden", marginLeft:"auto", marginRight:"auto"}}>
+  
+            <div className="sticky content-center top-56 z-20" style={{ marginLeft:"auto", marginRight:"auto"}}>
   
                 <BodyImport02 scrollYProgress={scrollYProgress}></BodyImport02>
   
@@ -68,8 +66,12 @@ const DeskTopPage = () => {
   
   
             <div className="content-center top-56 -z-20" style={{position:'fixed', marginLeft:"auto", marginRight:"auto"}}>
+
+              <div className="" style={{position:'absolute'}}>
+                <BodyImport03 scrollYProgress={scrollYProgress}></BodyImport03>
+
+              </div>
   
-              <BodyImport03 scrollYProgress={scrollYProgress}></BodyImport03>
   
             </div>
   

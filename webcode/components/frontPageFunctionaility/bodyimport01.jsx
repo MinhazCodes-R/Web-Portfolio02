@@ -128,14 +128,11 @@ const BodyImport01 = ( {scrollYProgress}) => {
                 </div>
                 <div style={{width:"auto", height:''}}>
 
-                  <motion.div style={{y:y1,zIndex:'100'}} >
-
-
-                    <div className="bg-neutral-200" style={{position:"absolute", height:"64px", width:"200vw", zIndex:"-1", transform:"translateX(-100vw)", backgroundColor:""}}></div>
-
+                  <motion.div style={{y:y1,zIndex:'100', position:'relative'}} >
                     <FloatingDock
                     items={links}/>
 
+                    
                   </motion.div>
                     
 
