@@ -25,7 +25,7 @@ const dropin = {
     }
 }
 
-const Modal = ({handleClose, contentdiv}) =>{
+const Modal = ({handleClose,modalOpen, contentdiv}) =>{
 
     return (
         <BackDrop onClick={handleClose}>
@@ -38,7 +38,7 @@ const Modal = ({handleClose, contentdiv}) =>{
                 exit="exit"
                 style={{}}
                 >
-                   <div className="" style={{width:"100%", maxHeight:'80vh'}}>
+                   <div className="" style={{width:"100%"}}>
                    {contentdiv}
                    </div>
             </motion.div>

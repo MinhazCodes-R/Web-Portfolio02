@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import React,{useState, useEffect} from "react"
+import React,{useState} from "react"
 import { Timeline } from "@/components/ui/timeline";
 
 
@@ -17,15 +17,14 @@ import {motion} from 'framer-motion'
 import Modal from "../components/myComponents/modal/modal"
 
 import { siNextdotjs } from "simple-icons";
-import { Scale } from "lucide-react";
 
 
 export function TimelineDemo() {
   
   const [modalOpen, setModalOpen] = useState(false);
   
-    const close = () => setModalOpen(false);
-    const open = () => setModalOpen(true);
+  const close = () => setModalOpen(false);
+  const open = () => setModalOpen(true);
 
 
   const svgsUsed = {
@@ -139,12 +138,17 @@ export function TimelineDemo() {
     {
       title: "Nov 2024 - Present",
       content: (
+        <motion.div
+        initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the element is in view
+          transition={{ duration: 0.5, delay: 0 }}>
         <div>
             <div className="my-10">
               <div>
-                <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle" onClick={()=>(modalOpen?close():open())}>
-                    <b>WebMaster</b>
-                </p>
+                <div className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle flex gap-5" onClick={()=>(modalOpen?close():open())}>
+                    <b>WebMaster</b> <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><p className="text-sm" style={{}}>click me</p></div>
+                </div>
 
                 <p className="mb-8"><b>McMaster's IEEE Student Branch</b></p>
 
@@ -159,13 +163,19 @@ export function TimelineDemo() {
             
           </div>
         </div>
+        </motion.div>
       ),
     },
     {
       title: "July - Aug 2024",
       content: (
+        <motion.div
+        initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the element is in view
+          transition={{ duration: 0.5, delay: 0 }}>
         <div>
-        <div className="my-10">
+        <div className="my-20">
           <div>
             <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle">
                 <b>FrontEnd Developer</b>
@@ -187,31 +197,18 @@ export function TimelineDemo() {
         
       </div>
     </div>
+    </motion.div>
       ),
     },
     {
       title: "Jan - Jun 2024",
       content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Deployed 5 new components on Aceternity today
+        <div className="my-10">
+           <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle">
+                <b>Math Tutor</b>
           </p>
           <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Card grid component
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
+           MATH TUTOR
           </div>
           <div className="grid grid-cols-2 gap-4">
             
@@ -225,7 +222,7 @@ export function TimelineDemo() {
     <>
     
     <div className="w-full">
-    {modalOpen && <Modal modalOpen={modalOpen} contentdiv={contents.desktopdiv} handleClose={close} text=""/>}
+    {modalOpen && <Modal modalOpen={modalOpen} contentdiv={contents.desktopdiv} handleClose={close}/>}
       <Timeline data={data}></Timeline>
     </div>
     </>

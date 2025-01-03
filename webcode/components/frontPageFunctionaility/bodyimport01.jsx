@@ -35,18 +35,18 @@ const links = [
       icon: (
         <IconBrandLinkedin className="h-full w-full text-white dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.linkedin.com/in/minhazur-rakin/",
     },
  
     {
-      title: "Link",
+      title: "GitHub",
       icon: (
         <IconBrandGithub className="h-full w-full text-white dark:text-neutral-300" />
       ),
       href: "#",
     },
     {
-      title: "Components",
+      title: "YouTube",
       icon: (
         <IconBrandYoutube className="h-full w-full text-white dark:text-neutral-300" />
       ),
@@ -54,7 +54,7 @@ const links = [
     },
 
     {
-      title: "Changelog",
+      title: "Instagram",
       icon: (
         <IconBrandInstagram className="h-full w-full text-white dark:text-neutral-300" />
       ),
@@ -62,14 +62,14 @@ const links = [
     },
  
     {
-      title: "Twitter",
+      title: "Email",
       icon: (
         <IconMailOpened className="h-full w-full text-white dark:text-neutral-300" />
       ),
       href: "#",
     },
     {
-      title: "GitHub",
+      title: "Phone",
       icon: (
         <IconPhone className="h-full w-full text-white dark:text-neutral-300" />
       ),

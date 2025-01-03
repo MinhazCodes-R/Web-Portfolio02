@@ -2,12 +2,13 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, Home  } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import {motion} from "framer-motion";
 
 import React from "react";
-import { FloatingDock } from "@/components/ui/floating-dock";
+import Modal from './modal/modal'
+
 import {
   IconBrandGithub,
   IconBrandX,
@@ -17,31 +18,75 @@ import {
   IconTerminal2,
 } from "@tabler/icons-react";
 
-  const links = [
+  // const links = [
 
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "GitHub",
-      icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-  ];
+  //   {
+  //     title: "Twitter",
+  //     icon: (
+  //       <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+  //     ),
+  //     href: "#",
+  //   },
+  //   {
+  //     title: "GitHub",
+  //     icon: (
+  //       <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+  //     ),
+  //     href: "#",
+  //   },
+  // ];
 
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const Header = () => {
+
+
+    const [modalOpen, setModalOpen] = useState(false);
+    
+    const close = () => setModalOpen(false);
+    const open = () => setModalOpen(true);
+
+
+
+  const content_display ={
+    menueitem:(
+      <>
+
+
+      <nav className="flex-grow">
+        <ul className="space-y-2 w-[80vw]">
+          <li>
+            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+              <Home size={24} className="text-black" />
+              <span className="font-medium">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+              <span className="font-medium">
+                Experience</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-folder-git-2"><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"/><circle cx="13" cy="12" r="2"/><path d="M18 19c-2.8 0-5-2.2-5-5v8"/><circle cx="20" cy="19" r="2"/></svg>
+              <span className="font-medium">Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-user"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M15 18a3 3 0 1 0-6 0"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><circle cx="12" cy="13" r="2"/></svg>
+              <span className="font-medium">Resume</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    
+      </>
+    )
+  };
+  
 
   return (
     <header className="bg-background shadow-sm">
@@ -59,76 +104,79 @@ const Header = () => {
               </div> */}
             </span>
               {/* Replace with your logo */}
-              <svg className="h-8 w-auto sm:h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-              <span className="ml-2 text-xl font-bold text-primary">MinhazsLOGO</span>
+
+              <span className="ml-2 text-xl font-bold text-primary">MinhazCodes</span>
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Button
               variant="ghost"
-              onClick={toggleMenu}
-              aria-expanded={isMenuOpen}
+              onClick={open}
               aria-label="Toggle menu"
               className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
+                >
+              <Menu className="h-6 w-6"/>
             </Button>
           </div>
-          <nav className="hidden md:flex space-x-10">
-            <Link href="/about" className="text-base font-medium text-foreground hover:text-primary">
-              <motion.button whileHover={{scale:1.5}}>Home</motion.button>
+          <nav className="hidden md:flex space-x-8">
+
+            <Link href="/" className="text-base font-medium text-foreground hover:text-primary">
+              <motion.button whileHover={{scale:1.}}>
+                <div className='flex'>
+                <Home size={24} className="text-black" />
+                Home
+
+
+                </div>
+                
+                
+                </motion.button>
             </Link>
-            <Link href="/services" className="text-base font-medium text-foreground hover:text-primary">
-            <motion.button whileHover={{scale:1.5}}>Experience</motion.button>
+            <Link href="/experience" className="text-base font-medium text-foreground hover:text-primary">
+            <motion.button whileHover={{scale:1.2}}>
+              <div className='flex'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+              Experience
+              </div>
+            </motion.button>
+              
+            </Link>
+            <Link href="/projectsdone" className="text-base font-medium text-foreground hover:text-primary">
+            <motion.button whileHover={{scale:1.2}}>
+
+              <div className='flex'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-folder-git-2"><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"/><circle cx="13" cy="12" r="2"/><path d="M18 19c-2.8 0-5-2.2-5-5v8"/><circle cx="20" cy="19" r="2"/></svg>
+              Projects
+              </div>
+              
+              
+              </motion.button>
             </Link>
             <Link href="/contact" className="text-base font-medium text-foreground hover:text-primary">
-            <motion.button whileHover={{scale:1.5}}>Projects</motion.button>
-            </Link>
-            <Link href="/contact" className="text-base font-medium text-foreground hover:text-primary">
-            <motion.button whileHover={{scale:1.5}}>Resume</motion.button>
+            <motion.button whileHover={{scale:1.2}}>
+
+              <div className='flex'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-user"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M15 18a3 3 0 1 0-6 0"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><circle cx="12" cy="13" r="2"/></svg>
+              Resume
+
+              </div>
+              </motion.button>
             </Link>
           </nav>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Button variant="ghost" asChild>
+            {/* <Button variant="ghost" asChild>
               <Link href="/login">Log in</Link>
             </Button>
             <Button asChild className="ml-8">
               <Link href="/signup">Sign up</Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-accent">
-            About
-          </Link>
-          <Link href="/services" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-accent">
-            Services
-          </Link>
-          <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-accent">
-            Contact
-          </Link>
-        </div>
-        <div className="pt-4 pb-3 border-t border-accent">
-          <div className="px-2 space-y-1">
-            <Link href="/login" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-accent">
-              Log in
-            </Link>
-            <Link href="/signup" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary hover:bg-accent">
-              Sign up
-            </Link>
-          </div>
-        </div>
-      </div>
+      {modalOpen && <Modal modalOpen={modalOpen} contentdiv={content_display.menueitem} handleClose={close}/>}
+      
     </header>
   )
 }

@@ -40,11 +40,8 @@ const BodyImport02 = ( {scrollYProgress}) => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 500);
     };
-
-    // Check the screen size initially
     handleResize();
 
-    // Add a resize event listener
     window.addEventListener('resize', handleResize);
 
     // Clean up the event listener on unmount

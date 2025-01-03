@@ -1,9 +1,7 @@
 'use client';
-import Head from 'next/head';
 import {motion, useScroll} from "framer-motion"
-import {useState, useEffect} from "react"
 
-import Header from "../myComponents/headermobile"
+import Header from "../myComponents/header"
 
 import {HeroHighlight, Highlight} from "../ui/hero-highlight"
 
@@ -13,10 +11,6 @@ import BodyImport01 from "./bodyimport01";
 
 import Image from 'next/image'
 import ProfilePic from '../../app/IMG_5635.jpg'
-
-
-
-import BodyImport02 from "./bodyimport02";
 import BodyImport03 from './bodyimport03';
 
 import { FloatingDock } from "@/components/ui/floating-dock";

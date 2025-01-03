@@ -17,8 +17,8 @@ import ProfilePic from '../../app/IMG_5635.jpg'
 
 
 
-import BodyImport02 from "./bodyimport02";
-import BodyImport03 from './bodyimport03';
+import BodyImport02 from "./BodyImport02";
+import BodyImport03 from "./bodyimport03";
 
 
 
@@ -38,7 +38,7 @@ const DeskTopPage = () => {
             <div className="sticky top-0 z-50">
   
   
-            <Header ></Header>
+            <Header></Header>
             <div style={{height:"auto"}}>
     
               <div className="" style={{boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px'}}>
@@ -56,7 +56,6 @@ const DeskTopPage = () => {
   
             </div>
   
-            {/* <MinhazCanva></MinhazCanva> */}
   
   
   
