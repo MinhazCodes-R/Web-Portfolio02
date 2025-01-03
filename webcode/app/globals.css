@@ -63,18 +63,25 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure body fits within the viewport */
   }
+
+  * {
+    box-sizing: border-box;
+    max-width: 100%; /* Prevent elements from exceeding viewport width */
+  }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-
 
 .display {
   overflow: hidden; /* Prevent scrolling */
   height: 100vh; /* Ensures the section takes full viewport height */
   position: relative; /* Ensures it stays within the viewport */
 }
-
