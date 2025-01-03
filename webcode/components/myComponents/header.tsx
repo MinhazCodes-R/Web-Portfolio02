@@ -56,29 +56,29 @@ import {
       <nav className="flex-grow">
         <ul className="space-y-2 w-[80vw]">
           <li>
-            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <Link href="./" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
               <Home size={24} className="text-black" />
               <span className="font-medium">Home</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <Link href="./experience" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
               <span className="font-medium">
                 Experience</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <Link href="./projectsdone" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-folder-git-2"><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"/><circle cx="13" cy="12" r="2"/><path d="M18 19c-2.8 0-5-2.2-5-5v8"/><circle cx="20" cy="19" r="2"/></svg>
               <span className="font-medium">Projects</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <Link href="./" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-user"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M15 18a3 3 0 1 0-6 0"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><circle cx="12" cy="13" r="2"/></svg>
               <span className="font-medium">Resume</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
