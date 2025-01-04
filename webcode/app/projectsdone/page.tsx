@@ -210,14 +210,7 @@ const MobileComponent = () => {
         transition={{ duration: 0.5, delay: 0 }}
         
         className="w-[80vw] grid grid-cols-5 rounded-xl bg-white p-5"  style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', overflow:'hidden'}}>
-          <div className="col-span-5 md:col-span-2 sm:col-span-5 text-black text-lg"> <div className="mt-4">
-            Created a Rubik's cube solver. This project had a python based graphics user interface (GUI) created using python's Tkinter library.
-            After the user enters the cube colors into the GUI and presses the start button, the combination of motors goees ahead and solves the cube!
 
-          </div>
-          <div className="my-5">Check out the video!</div>
-          
-          </div>
 
           <div className="col-span-5 md:col-span-3 sm:col-span-5"> 
             <div className="p-4" style={{}}>
@@ -343,16 +336,16 @@ const DesktopComponent = () => {
 
             <div className="w-[80vw] grid grid-cols-5 rounded-xl bg-white p-5"  style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
 
-              <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center"> <div className="bg-green-400 w-[500px] h-[300px]"></div></div>
+              <div className="col-span-5 md:col-span-3  text-white flex justify-center"> <div className="w-[500px]"><Image src={travelagent} alt="travel agent"></Image></div></div>
               
-              <div className="col-span-5 md:col-span-2 sm:col-span-5 text-white">
+              <div className="col-span-5 md:col-span-2  text-black">
 
-              <div className="mt-4">Developed a web tool to translate real time camera inputs of ASL hand signals to the corresponding English letter.</div>
+              <div className="mt-4">Constructed a AI assistant that helps users plan out their next vacation. Takes custom messages, prices, and locations to suggest the perfect tourist attractions.</div>
               <div className="mb-4">
                 Visit The Github!
               </div>
               
-              <div>(Hackathon Project)</div>
+              <div className="my-2">(Hackathon Project)</div>
               </div>
             </div>
 
@@ -452,8 +445,14 @@ const DesktopComponent = () => {
                 <iframe style={{position:'relative',left:'0px'}} width="400" height="255" src="https://www.youtube.com/embed/9DItpDXlWFA?si=cGKhmg9wRjLFhtvK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
             </div>
+            <div className="col-span-5 md:col-span-2 sm:col-span-5 text-black text-lg"> <div className="mt-4">
+            Created a Rubik's cube solver. This project had a python based graphics user interface (GUI) created using python's Tkinter library.
+            After the user enters the cube colors into the GUI and presses the start button, the combination of motors goees ahead and solves the cube!
 
-          <div className="col-span-5 md:col-span-2 sm:col-span-5 text-white">Hello this is a description</div>
+          </div>
+          <div className="my-5">Check out the video!</div>
+          
+          </div>
 
 
         </motion.div>
