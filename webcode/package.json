@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-toast": "^1.2.4",
     "@react-spring/parallax": "^9.7.5",
     "@react-spring/web": "^9.7.5",
     "@tabler/icons-react": "^3.26.0",

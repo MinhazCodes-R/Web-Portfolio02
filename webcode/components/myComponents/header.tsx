@@ -80,6 +80,13 @@ import {
               <span className="font-medium">Resume</span>
             </Link>
           </li>
+          <li>
+            <Link onClick={close} href="./contactme" className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors duration-200">
+            <svg fill="#000000" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,1H4A1,1,0,0,0,3,2V22a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V2A1,1,0,0,0,20,1ZM19,21H5V3H19ZM9,8.5a3,3,0,1,1,3,3A3,3,0,0,1,9,8.5Zm-2,9a5,5,0,0,1,10,0,1,1,0,0,1-2,0,3,3,0,0,0-6,0,1,1,0,0,1-2,0Z"/></svg>
+              <span className="font-medium">Contact</span>
+            </Link>
+          </li>
+          
         </ul>
       </nav>
     
@@ -158,6 +165,16 @@ import {
               <div className='flex'>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-file-user"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M15 18a3 3 0 1 0-6 0"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><circle cx="12" cy="13" r="2"/></svg>
               Resume
+
+              </div>
+              </motion.button>
+            </Link>
+            <Link href="/contactme" className="text-base font-medium text-foreground hover:text-primary">
+            <motion.button whileHover={{scale:1.2}}>
+
+              <div className='flex'>
+              <svg fill="#000000" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,1H4A1,1,0,0,0,3,2V22a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V2A1,1,0,0,0,20,1ZM19,21H5V3H19ZM9,8.5a3,3,0,1,1,3,3A3,3,0,0,1,9,8.5Zm-2,9a5,5,0,0,1,10,0,1,1,0,0,1-2,0,3,3,0,0,0-6,0,1,1,0,0,1-2,0Z"/></svg>
+              Contact
 
               </div>
               </motion.button>
