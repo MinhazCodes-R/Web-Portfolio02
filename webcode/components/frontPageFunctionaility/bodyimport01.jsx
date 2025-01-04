@@ -156,14 +156,14 @@ const BodyImport01 = ( {scrollYProgress}) => {
       return (
         <div>
             <div className="px-4">
-                <div className="text-4xl mx-auto mr-10  mb-10 font-normal text-neutral-600 dark:text-neutral-400">
+                <div className="text-3xl mx-auto mr-10  mb-10 font-normal text-neutral-600 dark:text-neutral-400">
                   <motion.div style={{x:phone_x1,zIndex:'50'}}>
                     <div>
                         I have worked with <FlipWords words={words} /> <br />
                     </div>
 
                         <p>I am always looking to learn and do more!</p>
-                        <p style={{marginTop:"5vh", fontSize:"40px"}}>Check Out My Socials!</p>
+                        <p style={{marginTop:"5vh"}}>Check Out My Socials!</p>
 
                   </motion.div>
 

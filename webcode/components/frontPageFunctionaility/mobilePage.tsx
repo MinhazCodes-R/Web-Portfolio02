@@ -97,7 +97,7 @@ const MobilTopPage = () => {
         <>
 
 
-        <section ref={targetRef} className='relative h-[200vh]' style={{}}>
+        <section ref={targetRef} className='relative h-[190vh]' style={{}}>
   
             <div className="sticky top-0 z-50" >
               <Header ></Header>

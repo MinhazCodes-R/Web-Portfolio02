@@ -64,7 +64,7 @@ const BodyImport03 = ({scrollYProgress}) => {
             <motion.div className="" style={{zIndex:'0',y:y2}}>
 
 
-                <div className="text-4xl text-neutral-600 content-center" style={{maxWidth:'60vw'}}>
+                <div className="text-3xl text-neutral-600 content-center" style={{maxWidth:'60vw'}}>
                     <p className="m-1 mb-10">Dont let the name fool you!</p>
                     <p className="my-10 text-">While I am studying <i style={{color:'black'}}><b>Computer Engineering</b></i> I have developed my Software Skills by doing lots of Software Work and Projects.</p>
                     <p className="my-10">Check Them Out 😄</p>
