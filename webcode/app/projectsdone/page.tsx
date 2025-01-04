@@ -194,7 +194,7 @@ const MobileComponent = () => {
         justifyContent:'center'
       }}
       >
-      Rubic Cubes Solver
+      Rubik's Cube Solver
       </h1>
 
 
@@ -210,7 +210,14 @@ const MobileComponent = () => {
         transition={{ duration: 0.5, delay: 0 }}
         
         className="w-[80vw] grid grid-cols-5 rounded-xl bg-white p-5"  style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', overflow:'hidden'}}>
+          <div className="col-span-5 md:col-span-2 sm:col-span-5 text-black text-lg"> <div className="mt-4">
+            Created a Rubik's cube solver. This project had a python based graphics user interface (GUI) created using python's Tkinter library.
+            After the user enters the cube colors into the GUI and presses the start button, the combination of motors goees ahead and solves the cube!
 
+          </div>
+          <div className="my-5">Check out the video!</div>
+          
+          </div>
 
           <div className="col-span-5 md:col-span-3 sm:col-span-5"> 
             <div className="p-4" style={{}}>
