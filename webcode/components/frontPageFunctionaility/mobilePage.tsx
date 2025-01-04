@@ -104,8 +104,8 @@ const MobilTopPage = () => {
             </div>
 
             <div style={{height:"auto"}}>
-              <div className="text-neutral-400 ml-3 mt-1" >Click for Socials</div>
-              <div className="bg-neutral-200" style={{display:'flex', alignItems:"center",height:"64px", width:"200vw", zIndex:"100", backgroundColor:""}}>
+              <div className="text-neutral-400 ml-3 mt-1"  style={{overflow:'hidden'}}>Click for Socials</div>
+              <div className="bg-neutral-200 w-[100vw]" style={{display:'flex', alignItems:"center",height:"64px", width:"200vw", zIndex:"100", backgroundColor:"",overflow:'hidden'}}>
                 <div className='ml-5'>
                   <FloatingDock 
                   items={links}/>
