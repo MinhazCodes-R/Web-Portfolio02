@@ -97,16 +97,16 @@ const MobilTopPage = () => {
         <>
 
 
-        <section ref={targetRef} className='relative h-[300vh]' style={{}}>
+        <section ref={targetRef} className='relative h-[200vh]' style={{}}>
   
             <div className="sticky top-0 z-50" >
               <Header ></Header>
             </div>
 
             <div style={{height:"auto"}}>
+              <div className="text-neutral-400 ml-3 mt-1" >Click for Socials</div>
               <div className="bg-neutral-200" style={{display:'flex', alignItems:"center",height:"64px", width:"200vw", zIndex:"100", backgroundColor:""}}>
                 <div className='ml-5'>
-
                   <FloatingDock 
                   items={links}/>
                   
@@ -121,9 +121,7 @@ const MobilTopPage = () => {
                 className="text-3xl leading-relaxed"
                 >
       
-                <h1>I am a <Highlight><b>Computer Engineering</b></Highlight> student at McMaster</h1>
-      
-      
+                <h1>I am a</h1> <Highlight><b>Computer Engineering</b></Highlight><h1> student at McMaster</h1>
                 </HeroHighlight>
               </div>
 
@@ -138,14 +136,18 @@ const MobilTopPage = () => {
 
               <div className="place-content-center mt-10" style={{display:"flex", flexDirection:"column"}}>
 
+              <div className="pl-8">
+                <BodyImport01 scrollYProgress={scrollYProgress}>
+                    
+                </BodyImport01>
 
 
-              <BodyImport01 scrollYProgress={scrollYProgress}>
-                  
-              </BodyImport01>
+              </div>
 
 
-              <motion.div className='' style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+
+
+              <motion.div className='' style={{paddingLeft:'50px'}}>
 
               <Image className="w-60 rounded-bl-xl rounded-tr-3xl" src={ProfilePic} alt="somethingelse"></Image>
 
@@ -155,13 +157,13 @@ const MobilTopPage = () => {
               </div>
   
             </div>
-  
-  
-            <div className="content-center -z-20" style={{position:'fixed', marginLeft:"auto", marginRight:"auto"}}>
-  
-              <BodyImport03 scrollYProgress={scrollYProgress}></BodyImport03>
-  
+
+
+            <div>
+            <BodyImport03 scrollYProgress={scrollYProgress}></BodyImport03>
             </div>
+  
+            
   
   
   

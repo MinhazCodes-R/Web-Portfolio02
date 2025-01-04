@@ -11,7 +11,6 @@ import {motion, useTransform} from "framer-motion"
 
 
 const BodyImport03 = ({scrollYProgress}) => {
-      const y2= useTransform(scrollYProgress, [0,.5], ["300%","10%"]);
 
        const [isMobile, setIsMobile] = useState(false);
 
@@ -32,6 +31,7 @@ const BodyImport03 = ({scrollYProgress}) => {
   }, []);
 
     if (!isMobile){
+    const y2= useTransform(scrollYProgress, [0,.5], ["300%","10%"]);
     return (
     <div className="" style={{transform:'translateY(0px)'}}>
         <div style={{width:'100vw',display:'flex',justifyContent:'center',zIndex:'-100',pointerEvents:'none'}} >
@@ -56,6 +56,7 @@ const BodyImport03 = ({scrollYProgress}) => {
     </div>)
     }
     else{
+        const y2= useTransform(scrollYProgress, [0,.9], ["300%","10%"]);
         return (
         <div className="" style={{transform:'translateY(0px)'}}>
         <div style={{width:'100vw',display:'flex',justifyContent:'center',zIndex:'-100',pointerEvents:'none'}} >

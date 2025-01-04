@@ -84,7 +84,7 @@ const BodyImport01 = ( {scrollYProgress}) => {
   const y2= useTransform(scrollYProgress, [.6,.9], ["0%","0%"]);
 
 
-  const phone_x1= useTransform(scrollYProgress, [.1,.4], ["0%","-200%"]);
+  const phone_x1= useTransform(scrollYProgress, [.1,.8], ["0%","-200%"]);
   const phone_y1= useTransform(scrollYProgress, [.3,1], ["0%","0%"]);
   const phone_y2= useTransform(scrollYProgress, [.6,.9], ["0%","0%"]);
 
@@ -163,7 +163,7 @@ const BodyImport01 = ( {scrollYProgress}) => {
                     </div>
 
                         <p>I am always looking to learn and do more!</p>
-                        <p style={{marginTop:"5vh", fontSize:"40px"}}>Other Socials!</p>
+                        <p style={{marginTop:"5vh", fontSize:"40px"}}>Check Out My Socials!</p>
 
                   </motion.div>
 
