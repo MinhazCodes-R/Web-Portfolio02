@@ -172,7 +172,7 @@ const MobileComponent = () => {
 
 
 
-    <section id="rubicsolver">
+    <section id="rubiksolver">
     <div>
 
 
@@ -416,7 +416,7 @@ const DesktopComponent = () => {
       <div>
 
 
-    <section id="rubicsolver">
+    <section id="rubiksolver">
       <div className="pl-36 mt-10">
 
       <h1
@@ -425,7 +425,7 @@ const DesktopComponent = () => {
         backgroundImage: "linear-gradient(to right, #000000 0px, #525252 100px, #b6b6b6 200px)",
       }}
       >
-      Rubic Cubes Solver
+      Rubik's Cubes Solver
       </h1>
 
 
