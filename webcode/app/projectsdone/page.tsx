@@ -25,8 +25,7 @@ const MobileComponent = () => {
       </div>
 
 
-
-
+      <section id="asltranslator" style={{scrollMarginTop:'100px'}}>
       <div className="">
         <div className="mt-10" style={{display:'flex', alignItems:"center", justifyContent:'center'}}>
 
@@ -75,6 +74,7 @@ const MobileComponent = () => {
 
 
       </div>
+      </section>
       
       <section id="travelassistant" style={{scrollMarginTop:'100px'}}>
       <div>
@@ -127,14 +127,8 @@ const MobileComponent = () => {
 
       </section>
 
-      <div>
-
-
-      
-
-
-
       <section id="siesmicdetector" style={{scrollMarginTop:'100px', display:'flex', justifyContent:'center'}}>
+      <div>
       <div className="mt-10">
         <h1
         className="text-4xl font-bold bg-clip-text text-transparent"
@@ -145,7 +139,6 @@ const MobileComponent = () => {
         Seismic Detector
         </h1>
       </div>
-      </section>
 
       <div className="p-10 flex justify-center">
 
@@ -175,13 +168,14 @@ const MobileComponent = () => {
 
 
     </div>
+    </section>
 
-
-
-      <div>
 
 
     <section id="rubicsolver">
+    <div>
+
+
       <div className="mt-10">
 
       <h1
@@ -231,11 +225,11 @@ const MobileComponent = () => {
 
       </div>
 
-      </section>
 
 
 
     </div>
+    </section>
       
     </>
   );
@@ -260,7 +254,7 @@ const DesktopComponent = () => {
 
 
 
-
+      <section id="asltranslator" style={{scrollMarginTop:'100px'}}>
       <div className="">
         <div className="pl-36 mt-10">
 
@@ -313,6 +307,7 @@ const DesktopComponent = () => {
 
 
       </div>
+      </section>
       
       <section id="travelassistant" style={{scrollMarginTop:'100px'}}>
       <div>
