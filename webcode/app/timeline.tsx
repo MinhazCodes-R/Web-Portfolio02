@@ -70,7 +70,7 @@ export function TimelineDemo() {
   
   const contents = {
     desktopdiv:
-    (<div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll">
+    (<div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh',}}>
       <h1><b className="text-blue-400 text-3xl">WebMaster</b></h1>
       <p>For McMaster's IEEE Student Branch</p>
 
