@@ -43,14 +43,14 @@ const links = [
       icon: (
         <IconBrandGithub className="h-full w-full text-white dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://github.com/MinhazCodes-R",
     },
     {
       title: "YouTube",
       icon: (
         <IconBrandYoutube className="h-full w-full text-white dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "https://www.youtube.com/@MinhazsVideos",
     },
 
     {
@@ -66,14 +66,14 @@ const links = [
       icon: (
         <IconMailOpened className="h-full w-full text-white dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/#emailandphone",
     },
     {
       title: "Phone",
       icon: (
         <IconPhone className="h-full w-full text-white dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/#emailandphone",
     },
   ];
 
@@ -84,7 +84,7 @@ const BodyImport01 = ( {scrollYProgress}) => {
   const y2= useTransform(scrollYProgress, [.6,.9], ["0%","0%"]);
 
 
-  const phone_x1= useTransform(scrollYProgress, [.1,.8], ["0%","-200%"]);
+  const phone_x1= useTransform(scrollYProgress, [.1,1], ["0%","-200%"]);
   const phone_y1= useTransform(scrollYProgress, [.3,1], ["0%","0%"]);
   const phone_y2= useTransform(scrollYProgress, [.6,.9], ["0%","0%"]);
 
@@ -121,9 +121,6 @@ const BodyImport01 = ( {scrollYProgress}) => {
                         <p style={{marginTop:"5vh", fontSize:"40px"}}>Other Socials!</p>
 
                   </motion.div>
-
-                
-
                         
                 </div>
                 <div style={{width:"auto", height:''}}>

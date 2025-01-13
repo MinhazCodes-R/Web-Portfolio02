@@ -28,7 +28,32 @@ const App = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return isMobile ? <MobilTopPage /> : <DeskTopPage />;
+  return isMobile ? (<><MobilTopPage /> <section id="emailandphone">
+    <div className="text-xl text-neutral-600 content-center bg-black p-1" style={{ display:'flex',justifyContent:'center', maxWidth:'100vw', transform:'translateY(-60px)'}}>
+
+    <div className='text-white'>
+    <p>Email: Minhazur.rakin101@gmail.com</p>
+    <p>Phone: 647 568 8365</p>
+
+
+    </div>
+
+
+    </div>
+</section></>) : <><DeskTopPage /> <section id="emailandphone">
+
+  <div className="text-3xl text-neutral-600 content-center bg-black p-10" style={{ display:'flex',justifyContent:'center', maxWidth:'100vw', transform:'translateY(-100px)'}}>
+
+    <div className='text-white'>
+    <p>Email: Minhazur.rakin101@gmail.com</p>
+    <p>Phone: 647 568 8365</p>
+
+
+    </div>
+
+
+  </div>
+</section></>;
 
 }
 

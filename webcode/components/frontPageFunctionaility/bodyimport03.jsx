@@ -43,8 +43,7 @@ const BodyImport03 = ({scrollYProgress}) => {
                     <p className="m-1 mb-10">Dont let the name fool you!</p>
                     <p className="my-10 text-">While I am studying <i style={{color:'black'}}><b>Computer Engineering</b></i> I have developed my Software Skills by doing lots of Software Work and Projects.</p>
                     <p className="my-10">Check Them Out 😄</p>
-                    <p className="my-0">Projects</p>
-                    <p className="my-0">Experience</p>
+                   
                 </div>
 
             </motion.div>
@@ -56,7 +55,7 @@ const BodyImport03 = ({scrollYProgress}) => {
     </div>)
     }
     else{
-        const y2= useTransform(scrollYProgress, [0,.9], ["300%","10%"]);
+        const y2= useTransform(scrollYProgress, [0,1], ["300%","10%"]);
         return (
         <div className="" style={{transform:'translateY(0px)'}}>
         <div style={{width:'100vw',display:'flex',justifyContent:'center',zIndex:'-100',pointerEvents:'none'}} >
@@ -67,7 +66,7 @@ const BodyImport03 = ({scrollYProgress}) => {
                 <div className="text-3xl text-neutral-600 content-center" style={{maxWidth:'60vw'}}>
                     <p className="m-1 mb-10">Dont let the name fool you!</p>
                     <p className="my-10 text-">While I am studying <i style={{color:'black'}}><b>Computer Engineering</b></i> I have developed my Software Skills by doing lots of Software Work and Projects.</p>
-                    <p className="my-10">Check Them Out 😄</p>
+                    {/* <p className="my-10">Check Them Out 😄</p> */}
                 </div>
 
             </motion.div>

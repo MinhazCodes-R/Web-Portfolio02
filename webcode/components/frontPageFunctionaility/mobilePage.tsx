@@ -33,55 +33,54 @@ import {
 } from "@tabler/icons-react";
 
 
+
 const links = [
-  {
-    title: "LinkedIn",
-    icon: (
-      <IconBrandLinkedin className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
+    {
+      title: "LinkedIn",
+      icon: (
+        <IconBrandLinkedin className="h-full w-full text-white dark:text-neutral-300" />
+      ),
+      href: "https://www.linkedin.com/in/minhazur-rakin/",
+    },
+ 
+    {
+      title: "GitHub",
+      icon: (
+        <IconBrandGithub className="h-full w-full text-white dark:text-neutral-300" />
+      ),
+      href: "https://github.com/MinhazCodes-R",
+    },
+    {
+      title: "YouTube",
+      icon: (
+        <IconBrandYoutube className="h-full w-full text-white dark:text-neutral-300" />
+      ),
+      href: "https://www.youtube.com/@MinhazsVideos",
+    },
 
-  {
-    title: "Link",
-    icon: (
-      <IconBrandGithub className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-  {
-    title: "Components",
-    icon: (
-      <IconBrandYoutube className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-
-  {
-    title: "Changelog",
-    icon: (
-      <IconBrandInstagram className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-
-  {
-    title: "Twitter",
-    icon: (
-      <IconMailOpened className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-  {
-    title: "GitHub",
-    icon: (
-      <IconPhone className="h-full w-full text-white dark:text-neutral-300" />
-    ),
-    href: "#",
-  },
-];
-
-
+    {
+      title: "Instagram",
+      icon: (
+        <IconBrandInstagram className="h-full w-full text-white dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+ 
+    {
+      title: "Email",
+      icon: (
+        <IconMailOpened className="h-full w-full text-white dark:text-neutral-300" />
+      ),
+      href: "/#emailandphone",
+    },
+    {
+      title: "Phone",
+      icon: (
+        <IconPhone className="h-full w-full text-white dark:text-neutral-300" />
+      ),
+      href: "/#emailandphone",
+    },
+  ];
 
 
 
@@ -97,7 +96,7 @@ const MobilTopPage = () => {
         <>
 
 
-        <section ref={targetRef} className='relative h-[190vh]' style={{}}>
+        <section ref={targetRef} className='relative h-[210vh]' style={{}}>
   
             <div className="sticky top-0 z-50" >
               <Header ></Header>
