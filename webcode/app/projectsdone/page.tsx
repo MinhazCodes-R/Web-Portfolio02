@@ -129,7 +129,7 @@ const MobileComponent = () => {
 
       <section id="siesmicdetector" style={{scrollMarginTop:'100px', display:'flex', justifyContent:'center'}}>
       <div>
-      <div className="mt-10">
+      <div className="mt-10 w-[100vw]" style={{display:'flex', justifyContent:'center', textAlign:'center'}}>
         <h1
         className="text-4xl font-bold bg-clip-text text-transparent"
         style={{
