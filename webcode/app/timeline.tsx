@@ -200,22 +200,22 @@ export function TimelineDemo() {
     </motion.div>
       ),
     },
-    {
-      title: "Jan - Jun 2024",
-      content: (
-        <div className="my-10">
-           <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle">
-                <b>Math Tutor</b>
-          </p>
-          <div className="mb-8">
-           MATH TUTOR
-          </div>
-          <div className="grid grid-cols-2 gap-4">
+    // {
+    //   title: "Jan - Jun 2024",
+    //   content: (
+    //     <div className="my-10">
+    //        <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle">
+    //             <b>Math Tutor</b>
+    //       </p>
+    //       <div className="mb-8">
+    //        MATH TUTOR
+    //       </div>
+    //       <div className="grid grid-cols-2 gap-4">
             
-          </div>
-        </div>
-      ),
-    },
+    //       </div>
+    //     </div>
+    //   ),
+    // },
   ];
 
   return (
