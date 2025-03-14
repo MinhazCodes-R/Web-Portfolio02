@@ -1,50 +1,37 @@
-"use client"; // Ensures this is a Client Component
+'use client';
+import Header from "../../components/myComponents/header"
+import {motion} from "framer-motion"
+import {useState} from "react"
+import BackDrop from "../../components/myComponents/modal/backdrop"
+import Modal from "../../components/myComponents/modal/modal"
+import { div } from "framer-motion/client";
 
-import { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
-import { pdfjs } from "react-pdf";
+import { X, Home, User, Settings, HelpCircle } from 'lucide-react'
 
-// Dynamically import react-pdf components (Disables SSR)
-const Document = dynamic(() => import("react-pdf").then((mod) => mod.Document), { ssr: false });
-const Page = dynamic(() => import("react-pdf").then((mod) => mod.Page), { ssr: false });
 
-// Set the worker source correctly (ensure /public/pdf.worker.min.js exists)
-pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
+import {BackgroundBeamsWithCollisionDemo} from "../backgroundwithcollision";
+import {LampDemo} from "../lampdisplay"
 
-const ResumePage = () => {
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [pdfFile, setPdfFile] = useState<string | null>(null);
 
-  useEffect(() => {
-    setPdfFile("/resume.pdf"); // Ensure resume.pdf is inside /public/
-  }, []);
-
+const App = () => {
+  
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl font-bold mb-4">My Resume</h1>
+    <>
+    <Header></Header>
+    </>
+  )
+}
 
-      {pdfFile ? (
-        <Document
-          file={pdfFile}
-          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-        >
-          {Array.from(new Array(numPages), (el, index) => (
-            <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-          ))}
-        </Document>
-      ) : (
-        <p>Loading PDF...</p>
-      )}
+export default App;
 
-      <a
-        href="/resume.pdf"
-        download="Minhazur_Rakin_Resume.pdf"
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-      >
-        Download Resume
-      </a>
-    </div>
-  );
-};
 
-export default ResumePage;
+
+// <motion.div
+// animate={{ x: position }} // Animate the x property
+// transition={{ type: "spring", stiffness: 100 }} // Animation settings
+// style={{
+//   width: "50px",
+//   height: "50px",
+//   backgroundColor: "blue",
+//   position: "absolute",
+// }}
