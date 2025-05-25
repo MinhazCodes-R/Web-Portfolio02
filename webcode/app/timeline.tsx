@@ -1,74 +1,83 @@
 'use client';
 import Image from "next/image";
-import React,{useState} from "react"
+import React, { useState, type ReactNode } from "react";
 import { Timeline } from "@/components/ui/timeline";
-
-import ieeescreen01 from "../images/IEEEscreen01.png"
-import ieeescreen02 from "../images/IEEEscreen02.png"
-
-import bjic01 from "../images/BJIC_overview.png"
-import bjic02 from "../images/BJIC_overview02.png"
-import bjic03 from "../images/BJIC_overview03.png"
-import bjic04 from "../images/BJIC_payment.png"
-
-import {motion} from 'framer-motion'
-
-import Modal from "../components/myComponents/modal/modal"
-
+import { motion } from 'framer-motion';
+import Modal from "../components/myComponents/modal/modal";
 import { siNextdotjs } from "simple-icons";
 
+// Images
+import ieeescreen01 from "../images/IEEEscreen01.png";
+import ieeescreen02 from "../images/IEEEscreen02.png";
+import bjic01 from "../images/BJIC_overview.png";
+import bjic02 from "../images/BJIC_overview02.png";
+import bjic03 from "../images/BJIC_overview03.png";
+import bjic04 from "../images/BJIC_payment.png";
+
+// Type for each timeline item
+interface TimelineItem {
+  title: string;
+  content: ReactNode;
+}
 
 export function TimelineDemo() {
-  
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+  const [modalContent, setModalContent] = useState<ReactNode>(null);
 
   const close = () => setModalOpen(false);
-  const open = (content) => {
+  const open = (content: ReactNode) => {
     setModalContent(content);
     setModalOpen(true);
   };
 
   const svgsUsed = {
-    nextjs:(<svg
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      style={{pointerEvents:'none'}}
-    >
-      <title>{siNextdotjs.title}</title>
-      <path d={siNextdotjs.path} />
-    </svg>),
-
-    tailwind:(
-      <img
-      src="/tailwindcss-mark.svg"
-      alt="Tailwind CSS Logo"
-      style={{pointerEvents:'none'}} />
+    nextjs: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        style={{ pointerEvents: 'none' }}
+      >
+        <title>{siNextdotjs.title}</title>
+        <path d={siNextdotjs.path} />
+      </svg>
     ),
-
-    linux:(<img
-      src="/linux-mark.svg"
-      alt="Linux CSS Logo"
-      style={{pointerEvents:'none'}} />),
-
-    nginx:(<img
-      src="./nginx-svgrepo-com.svg"
-      alt="Nginx Logo"
-      style={{pointerEvents:'none'}} />),
-
-    sqlsvg:(<img
-      src="./postgresql-logo-svgrepo-com.svg"
-      alt="PostgreSQL Logo"
-      style={{pointerEvents:'none'}} />)
+    tailwind: (
+      <img
+        src="/tailwindcss-mark.svg"
+        alt="Tailwind CSS Logo"
+        style={{ pointerEvents: 'none' }}
+      />
+    ),
+    linux: (
+      <img
+        src="/linux-mark.svg"
+        alt="Linux Logo"
+        style={{ pointerEvents: 'none' }}
+      />
+    ),
+    nginx: (
+      <img
+        src="./nginx-svgrepo-com.svg"
+        alt="Nginx Logo"
+        style={{ pointerEvents: 'none' }}
+      />
+    ),
+    sqlsvg: (
+      <img
+        src="./postgresql-logo-svgrepo-com.svg"
+        alt="PostgreSQL Logo"
+        style={{ pointerEvents: 'none' }}
+      />
+    )
   };
 
   const modalContents = {
     heatherGlen: (
-      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">Embedded Systems Intern</h1>
         <p><b>Heather Glen Village</b> – Milton, Ontario</p>
         <ul className="list-disc ml-5 mt-3">
@@ -80,7 +89,7 @@ export function TimelineDemo() {
       </div>
     ),
     aerialRobotics: (
-      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">Software Team Lead</h1>
         <p><b>McMaster Aerial Robotics Team</b> – Hamilton, Ontario</p>
         <ul className="list-disc ml-5 mt-3">
@@ -92,7 +101,7 @@ export function TimelineDemo() {
       </div>
     ),
     ieee: (
-      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">WebMaster</h1>
         <p><b>IEEE McMaster Student Branch</b> – Hamilton, Ontario</p>
         <ul className="list-disc ml-5 mt-3">
@@ -103,7 +112,7 @@ export function TimelineDemo() {
       </div>
     ),
     bjic: (
-      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">Frontend Developer</h1>
         <p><b>Baitul Jannah Islamic Center (BJIC)</b> – Scarborough, Ontario</p>
         <ul className="list-disc ml-5 mt-3">
@@ -114,7 +123,7 @@ export function TimelineDemo() {
     )
   };
 
-  const data = [
+  const data: TimelineItem[] = [
     {
       title: "May 2025 - Aug 2025",
       content: (
@@ -188,11 +197,9 @@ export function TimelineDemo() {
   ];
 
   return (
-    <>
-      <div className="w-full">
-        {modalOpen && <Modal modalOpen={modalOpen} contentdiv={modalContent} handleClose={close} />}
-        <Timeline data={data} />
-      </div>
-    </>
+    <div className="w-full">
+      {modalOpen && <Modal modalOpen={modalOpen} contentdiv={modalContent} handleClose={close} />}
+      <Timeline data={data} />
+    </div>
   );
 }
