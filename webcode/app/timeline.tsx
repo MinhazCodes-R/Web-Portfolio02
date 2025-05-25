@@ -3,7 +3,6 @@ import Image from "next/image";
 import React,{useState} from "react"
 import { Timeline } from "@/components/ui/timeline";
 
-
 import ieeescreen01 from "../images/IEEEscreen01.png"
 import ieeescreen02 from "../images/IEEEscreen02.png"
 
@@ -22,22 +21,25 @@ import { siNextdotjs } from "simple-icons";
 export function TimelineDemo() {
   
   const [modalOpen, setModalOpen] = useState(false);
-  
-  const close = () => setModalOpen(false);
-  const open = () => setModalOpen(true);
+  const [modalContent, setModalContent] = useState(null);
 
+  const close = () => setModalOpen(false);
+  const open = (content) => {
+    setModalContent(content);
+    setModalOpen(true);
+  };
 
   const svgsUsed = {
     nextjs:(<svg
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      width="20" // Adjust as needed
-      height="20" // Adjust as needed
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
-      fill="currentColor" // Optional: customize the fill color
+      fill="currentColor"
       style={{pointerEvents:'none'}}
     >
-      <title>{siNextdotjs.title}</title> {/* Accessible title */}
+      <title>{siNextdotjs.title}</title>
       <path d={siNextdotjs.path} />
     </svg>),
 
@@ -45,186 +47,152 @@ export function TimelineDemo() {
       <img
       src="/tailwindcss-mark.svg"
       alt="Tailwind CSS Logo"
-      style={{pointerEvents:'none'}}>
-      </img>
+      style={{pointerEvents:'none'}} />
     ),
 
     linux:(<img
       src="/linux-mark.svg"
       alt="Linux CSS Logo"
-      style={{pointerEvents:'none'}}>
-      </img>),
+      style={{pointerEvents:'none'}} />),
 
-    nginx:(
-      <img src="./nginx-svgrepo-com.svg"alt="Linux CSS Logo"
-      style={{pointerEvents:'none'}}></img>
+    nginx:(<img
+      src="./nginx-svgrepo-com.svg"
+      alt="Nginx Logo"
+      style={{pointerEvents:'none'}} />),
+
+    sqlsvg:(<img
+      src="./postgresql-logo-svgrepo-com.svg"
+      alt="PostgreSQL Logo"
+      style={{pointerEvents:'none'}} />)
+  };
+
+  const modalContents = {
+    heatherGlen: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+        <h1 className="text-blue-400 text-3xl font-bold">Embedded Systems Intern</h1>
+        <p><b>Heather Glen Village</b> – Milton, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Engineered embedded software for 12+ industrial devices using Modbus RTU over RS-485</li>
+          <li>Implemented I²C and UART drivers on ESP32/Arduino boards for real-time data collection from 20+ sensors</li>
+          <li>Debugged HVAC control logic, improving system response time by 30%</li>
+          <li>Developed internal tooling that automated 90% of firmware deployment</li>
+        </ul>
+      </div>
     ),
-    sqlsvg:(
-      <img src="./postgresql-logo-svgrepo-com.svg"alt="Linux CSS Logo"
-      style={{pointerEvents:'none'}}></img>
+    aerialRobotics: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+        <h1 className="text-blue-400 text-3xl font-bold">Software Team Lead</h1>
+        <p><b>McMaster Aerial Robotics Team</b> – Hamilton, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Interviewed over 100 candidates and onboarded 10 new team members</li>
+          <li>Developing object detection algorithms using OpenCV and TensorFlow</li>
+          <li>Led PCB design workshops using Altium Designer</li>
+          <li>Built team website with Next.js and planned AWS EC2 deployment via Docker</li>
+        </ul>
+      </div>
+    ),
+    ieee: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+        <h1 className="text-blue-400 text-3xl font-bold">WebMaster</h1>
+        <p><b>IEEE McMaster Student Branch</b> – Hamilton, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Built dynamic frontend UI using Next.js and Tailwind</li>
+          <li>Used Docker and Kubernetes for local Raspberry Pi cluster deployment</li>
+          <li>Developed authentication system with Prisma, PostgreSQL, OAuth, and Bcrypt</li>
+        </ul>
+      </div>
+    ),
+    bjic: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh'}}>
+        <h1 className="text-blue-400 text-3xl font-bold">Frontend Developer</h1>
+        <p><b>Baitul Jannah Islamic Center (BJIC)</b> – Scarborough, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Built and launched a responsive community website using vanilla JS and modular CSS</li>
+          <li>Improved accessibility and boosted engagement by 40%</li>
+        </ul>
+      </div>
     )
-
-
-
-  }
-  
-  const contents = {
-    desktopdiv:
-    (<div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh',}}>
-      <h1><b className="text-blue-400 text-3xl">WebMaster</b></h1>
-      <p>For McMaster's IEEE Student Branch</p>
-
-      <p>As the Webmaster for McMaster’s IEEE Student Chapter, I am responsible for designing, developing, and maintaining the chapter's online presence. My role requires me to build robust, dynamic, and user-friendly web applications that support the organization’s operations and enhance the experience for members and visitors.</p>
-      
-      <p className="my-3"><b>Key Responsibilities and Contributions</b></p>
-      <ul>
-
-        <li><b>Dynamic Frontend Development:</b>
-        <p>Designed and implemented dynamic, responsive, and visually appealing user interfaces using Next.js, Tailwind CSS, and various modern UI libraries. These tools enable the chapter’s website to deliver a seamless user experience across devices, ensuring accessibility and usability for all members.</p>
-        <div className="m-1" style={{display:'flex', gap:'15px'}}>
-          <motion.div style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-          {svgsUsed.nextjs}
-          </motion.div>
-          <motion.div style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-          {svgsUsed.tailwind}
-          </motion.div>
-
-
-        </div>
-        </li>
-
-        <li>
-          <p><b>Hosting and Deployment:</b></p>
-          <p>Leveraged my expertise in Linux to set up personal servers for hosting and deploying our web applications. This approach provides flexibility and cost-effectiveness while allowing for greater control over server configurations, performance, and security. </p>
-            <div style={{display:'flex'}}>
-
-            <motion.div className="m-1" style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}} >
-            {svgsUsed.linux}
-            </motion.div>
-            <motion.div className="m-1" style={{width:'25px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-            {svgsUsed.nginx}
-            </motion.div>
-
-            </div>
-        
-        </li>
-
-
-        <li><p><b>Secure Login and Database Systems:</b></p>
-        <p>Developed secure login and authentication mechanisms to ensure that sensitive member information is protected. Additionally, worked extensively with PostgreSQL to build and manage robust database systems that store critical data for the chapter’s operations.</p>
-        <motion.div className="m-1" style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-          {svgsUsed.sqlsvg}
-        </motion.div>
-        </li>
-
-        <li>
-          <p><b>Database of Shop Components (Ongoing):</b></p>
-          <p>Currently, I am leading an initiative to develop a comprehensive database system to display and track the components available in the IEEE shop. This system will streamline inventory management and make it easier for members to search for and request components online. By integrating this system with the chapter’s website, we aim to improve the shop’s efficiency and usability.</p>
-
-        </li>
-
-
-
-      </ul>
-
-
-      
-    </div>)
-  
-    }
-
+  };
 
   const data = [
     {
-      title: "Nov 2024 - Present",
+      title: "May 2025 - Aug 2025",
       content: (
-        <motion.div
-        initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the element is in view
-          transition={{ duration: 0.5, delay: 0 }}>
-        <div>
-            <div className="my-10">
-              <div>
-                <div className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle flex gap-5" onClick={()=>(modalOpen?close():open())}>
-                    <b>WebMaster</b> <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}><p className="text-sm" style={{}}>click me</p></div>
-                </div>
-
-                <p className="mb-8"><b>McMaster's IEEE Student Branch</b></p>
-
-
-              </div>
-                <p>As the webmaster for McMaster's IEEE, I specialized in building dynamic and responsive front-end user interfaces using Next.js, Tailwind, and modern UI libraries. I also leveraged Linux to create personal servers for hosting and deployment and developed secure login and database systems with PostgreSQL.</p>
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Embedded Systems Intern</b>
+              <button onClick={() => open(modalContents.heatherGlen)} className="text-sm text-neutral-500 underline">click me</button>
             </div>
-
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
-            <Image src={ieeescreen01} width={500} height={500} alt="other picture"></Image>
-            <Image src={ieeescreen02} width={500} height={500} alt="other picture"></Image>
-            
+            <p className="mb-4"><b>Heather Glen Village</b></p>
+            <p>Engineered embedded software for industrial devices, implemented low-level drivers, and automated firmware deployment tasks.</p>
           </div>
-        </div>
         </motion.div>
-      ),
+      )
     },
     {
-      title: "July - Aug 2024",
+      title: "Jan 2025 - Present",
       content: (
-        <motion.div
-        initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }} // Trigger when 20% of the element is in view
-          transition={{ duration: 0.5, delay: 0 }}>
-        <div>
-        <div className="my-20">
-          <div>
-            <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle">
-                <b>FrontEnd Developer</b>
-            </p>
-
-            <p className=" hover:text-neutral-400 mb-4"><b>BJIC (Baitul Jannah Islamic Center)</b></p>
-
-
-
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Software Team Lead</b>
+              <button onClick={() => open(modalContents.aerialRobotics)} className="text-sm text-neutral-500 underline">click me</button>
+            </div>
+            <p className="mb-4"><b>McMaster Aerial Robotics Team</b></p>
+            <p>Led the software team, conducted technical onboarding, and built AI and PCB workflows for autonomous navigation.</p>
           </div>
-            <p className="hover:text-neutral-400">As the webmaster for McMaster's IEEE, I specialized in building dynamic and responsive front-end user interfaces using Next.js, Tailwind, and modern UI libraries. I also leveraged Linux to create personal servers for hosting and deployment and developed secure login and database systems with PostgreSQL.</p>
-        </div>
-
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
-        <Image src={bjic01} width={500} height={500} alt="other picture"></Image>
-        <Image src={bjic02} width={500} height={500} alt="other picture"></Image>
-        <Image src={bjic03} width={500} height={500} alt="other picture"></Image>
-        <Image src={bjic04} width={500} height={500} alt="other picture"></Image>
-        
-      </div>
-    </div>
-    </motion.div>
-      ),
+        </motion.div>
+      )
     },
-    // {
-    //   title: "Jan - Jun 2024",
-    //   content: (
-    //     <div className="my-10">
-    //        <p className="text-neutral-500 hover:text-neutral-400 md:font-normal text-4xl mb-1 webmastertitle">
-    //             <b>Math Tutor</b>
-    //       </p>
-    //       <div className="mb-8">
-    //        MATH TUTOR
-    //       </div>
-    //       <div className="grid grid-cols-2 gap-4">
-            
-    //       </div>
-    //     </div>
-    //   ),
-    // },
+    {
+      title: "Nov 2024 - Present",
+      content: (
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>WebMaster</b>
+              <button onClick={() => open(modalContents.ieee)} className="text-sm text-neutral-500 underline">click me</button>
+            </div>
+            <p className="mb-4"><b>IEEE McMaster Student Branch</b></p>
+            <p>Specialized in frontend development and secure deployments using Next.js, Tailwind, Docker, and PostgreSQL.</p>
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+              <Image src={ieeescreen01} width={500} height={500} alt="IEEEscreen01" draggable={false} />
+              <Image src={ieeescreen02} width={500} height={500} alt="IEEEscreen02" draggable={false} />
+            </div>
+          </div>
+        </motion.div>
+      )
+    },
+    {
+      title: "Jun 2024 - Sep 2024",
+      content: (
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-20">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Frontend Developer</b>
+              <button onClick={() => open(modalContents.bjic)} className="text-sm text-neutral-500 underline">click me</button>
+            </div>
+            <p className="mb-4"><b>Baitul Jannah Islamic Center (BJIC)</b></p>
+            <p>Built and launched a responsive community site using vanilla JS and modular CSS, increasing engagement by 40%.</p>
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
+              <Image src={bjic01} width={500} height={500} alt="BJIC01" draggable={false} />
+              <Image src={bjic02} width={500} height={500} alt="BJIC02" draggable={false} />
+              <Image src={bjic03} width={500} height={500} alt="BJIC03" draggable={false} />
+              <Image src={bjic04} width={500} height={500} alt="BJIC04" draggable={false} />
+            </div>
+          </div>
+        </motion.div>
+      )
+    }
   ];
 
   return (
     <>
-    
-    <div className="w-full">
-    {modalOpen && <Modal modalOpen={modalOpen} contentdiv={contents.desktopdiv} handleClose={close}/>}
-      <Timeline data={data}></Timeline>
-    </div>
+      <div className="w-full">
+        {modalOpen && <Modal modalOpen={modalOpen} contentdiv={modalContent} handleClose={close} />}
+        <Timeline data={data} />
+      </div>
     </>
   );
 }
