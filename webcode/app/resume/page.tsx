@@ -18,20 +18,21 @@ const App = () => {
       <div
         style={{
           width: '100%',
-          height: '100vh',
+          minHeight: '100vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: '#f0f2f5',
-          padding: '2rem',
+          padding: '1rem',
         }}
       >
         <div
           style={{
-            width: '80%',
-            height: '90%',
-            boxShadow: '0 30px 60px rgba(0, 0, 0, 0.4)', // large bold drop shadow
-            borderRadius: '16px',
+            width: '100%',
+            maxWidth: '900px',
+            height: '90vh',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.25)',
+            borderRadius: '12px',
             overflow: 'hidden',
             backgroundColor: '#fff',
           }}
