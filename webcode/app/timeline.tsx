@@ -165,9 +165,25 @@ export function TimelineDemo() {
             </div>
             <p className="mb-4"><b>IEEE McMaster Student Branch</b></p>
             <p>Specialized in frontend development and secure deployments using Next.js, Tailwind, Docker, and PostgreSQL.</p>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
-              <Image src={ieeescreen01} width={500} height={500} alt="IEEEscreen01" draggable={false} />
-              <Image src={ieeescreen02} width={500} height={500} alt="IEEEscreen02" draggable={false} />
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 my-5 gap-4">
+              <Image
+  src={ieeescreen01}
+  width={500}
+  height={500}
+  alt="IEEEscreen01"
+  draggable={false}
+  className="border-4 border-gray-300 rounded-xl"
+/>
+
+<Image
+  src={ieeescreen02}
+  width={500}
+  height={500}
+  alt="IEEEscreen02"
+  draggable={false}
+  className="border-4 border-gray-300 rounded-xl"
+/>
+
             </div>
           </div>
         </motion.div>
@@ -184,11 +200,40 @@ export function TimelineDemo() {
             </div>
             <p className="mb-4"><b>Baitul Jannah Islamic Center (BJIC)</b></p>
             <p>Built and launched a responsive community site using vanilla JS and modular CSS, increasing engagement by 40%.</p>
-            <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
-              <Image src={bjic01} width={500} height={500} alt="BJIC01" draggable={false} />
-              <Image src={bjic02} width={500} height={500} alt="BJIC02" draggable={false} />
-              <Image src={bjic03} width={500} height={500} alt="BJIC03" draggable={false} />
-              <Image src={bjic04} width={500} height={500} alt="BJIC04" draggable={false} />
+            <div className="grid md:grid-cols-2 sm:grid-cols-1 my-5 gap-4">
+              <Image
+  src={bjic01}
+  width={500}
+  height={500}
+  alt="BJIC01"
+  draggable={false}
+  className="border-4 border-gray-300 rounded-xl shadow-sm"
+/>
+<Image
+  src={bjic02}
+  width={500}
+  height={500}
+  alt="BJIC02"
+  draggable={false}
+  className="border-4 border-gray-300 rounded-xl shadow-sm"
+/>
+<Image
+  src={bjic03}
+  width={500}
+  height={500}
+  alt="BJIC03"
+  draggable={false}
+  className="border-4 border-gray-300 rounded-xl shadow-sm"
+/>
+<Image
+  src={bjic04}
+  width={500}
+  height={500}
+  alt="BJIC04"
+  draggable={false}
+  className="border-4 border-gray-300 rounded-xl shadow-sm"
+/>
+
             </div>
           </div>
         </motion.div>
