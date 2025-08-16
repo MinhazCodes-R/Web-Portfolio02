@@ -76,6 +76,15 @@ export function TimelineDemo() {
   };
 
   const modalContents = {
+     heatherGlen: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+        <h1 className="text-blue-400 text-3xl font-bold">Software Engineering Intern</h1>
+        <p><b>Ericsson</b> – Ottawa, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Will be starting this fall</li>
+        </ul>
+      </div>
+    ),
     heatherGlen: (
       <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">Embedded Systems Intern</h1>
@@ -124,6 +133,21 @@ export function TimelineDemo() {
   };
 
   const data: TimelineItem[] = [
+     {
+      title: "Sep 2025 - Aug 2026",
+      content: (
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Software Engineering Intern</b>
+              <button onClick={() => open(modalContents.heatherGlen)} className="text-sm text-neutral-500 underline">click me</button>
+            </div>
+            <p className="mb-4"><b>Ericsson</b></p>
+            <p>Will be starting this fall</p>
+          </div>
+        </motion.div>
+      )
+    },
     {
       title: "May 2025 - Aug 2025",
       content: (
