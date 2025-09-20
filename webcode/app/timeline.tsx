@@ -63,48 +63,104 @@ export function TimelineDemo() {
       <img src="./postgresql-logo-svgrepo-com.svg"alt="Linux CSS Logo"
       style={{pointerEvents:'none'}}></img>
     )
+  };
 
+  const modalContents = {
+    ericsson: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+        <h1 className="text-blue-400 text-3xl font-bold">Software Engineering Intern</h1>
+        <p><b>Ericsson</b> – Ottawa, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Will be starting this fall</li>
+        </ul>
+      </div>
+    ),
+    heatherGlen: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+        <h1 className="text-blue-400 text-3xl font-bold">Embedded Systems Intern</h1>
+        <p><b>Heather Glen Village</b> – Milton, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Engineered embedded software for 12+ industrial devices using Modbus RTU over RS-485</li>
+          <li>Implemented I²C and UART drivers on ESP32/Arduino boards for real-time data collection from 20+ sensors</li>
+          <li>Debugged HVAC control logic, improving system response time by 30%</li>
+          <li>Developed internal tooling that automated 90% of firmware deployment</li>
+        </ul>
+      </div>
+    ),
+    aerialRobotics: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+        <h1 className="text-blue-400 text-3xl font-bold">Software Team Lead</h1>
+        <p><b>McMaster Aerial Robotics Team</b> – Hamilton, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Interviewed over 100 candidates and onboarded 10 new team members</li>
+          <li>Developing object detection algorithms using OpenCV and TensorFlow</li>
+          <li>Led PCB design workshops using Altium Designer</li>
+          <li>Built team website with Next.js and planned AWS EC2 deployment via Docker</li>
+        </ul>
+      </div>
+    ),
+    ieee: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+        <h1 className="text-blue-400 text-3xl font-bold">WebMaster</h1>
+        <p><b>IEEE McMaster Student Branch</b> – Hamilton, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Built dynamic frontend UI using Next.js and Tailwind</li>
+          <li>Used Docker and Kubernetes for local Raspberry Pi cluster deployment</li>
+          <li>Developed authentication system with Prisma, PostgreSQL, OAuth, and Bcrypt</li>
+        </ul>
+      </div>
+    ),
+    bjic: (
+      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+        <h1 className="text-blue-400 text-3xl font-bold">Frontend Developer</h1>
+        <p><b>Baitul Jannah Islamic Center (BJIC)</b> – Scarborough, Ontario</p>
+        <ul className="list-disc ml-5 mt-3">
+          <li>Built and launched a responsive community website using vanilla JS and modular CSS</li>
+          <li>Improved accessibility and boosted engagement by 40%</li>
+        </ul>
+      </div>
+    )
+  };
 
-
-  }
-  
-  const contents = {
-    desktopdiv:
-    (<div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{maxHeight:'80vh',}}>
-      <h1><b className="text-blue-400 text-3xl">WebMaster</b></h1>
-      <p>For McMaster's IEEE Student Branch</p>
-
-      <p>As the Webmaster for McMaster’s IEEE Student Chapter, I am responsible for designing, developing, and maintaining the chapter's online presence. My role requires me to build robust, dynamic, and user-friendly web applications that support the organization’s operations and enhance the experience for members and visitors.</p>
-      
-      <p className="my-3"><b>Key Responsibilities and Contributions</b></p>
-      <ul>
-
-        <li><b>Dynamic Frontend Development:</b>
-        <p>Designed and implemented dynamic, responsive, and visually appealing user interfaces using Next.js, Tailwind CSS, and various modern UI libraries. These tools enable the chapter’s website to deliver a seamless user experience across devices, ensuring accessibility and usability for all members.</p>
-        <div className="m-1" style={{display:'flex', gap:'15px'}}>
-          <motion.div style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-          {svgsUsed.nextjs}
-          </motion.div>
-          <motion.div style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-          {svgsUsed.tailwind}
-          </motion.div>
-
-
-        </div>
-        </li>
-
-        <li>
-          <p><b>Hosting and Deployment:</b></p>
-          <p>Leveraged my expertise in Linux to set up personal servers for hosting and deploying our web applications. This approach provides flexibility and cost-effectiveness while allowing for greater control over server configurations, performance, and security. </p>
-            <div style={{display:'flex'}}>
-
-            <motion.div className="m-1" style={{width:'20px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}} >
-            {svgsUsed.linux}
-            </motion.div>
-            <motion.div className="m-1" style={{width:'25px', display:'flex', justifyContent:'center', alignItems:'center'}} whileHover={{scale:1.8}}>
-            {svgsUsed.nginx}
-            </motion.div>
-
+  const data: TimelineItem[] = [
+     {
+      title: "Sep 2025 - Aug 2026",
+      content: (
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Software Engineering Intern</b>
+              <button onClick={() => open(modalContents.ericsson)} className="text-sm text-neutral-500 underline">click me</button>
+            </div>
+            <p className="mb-4"><b>Ericsson</b></p>
+            <p>Will be starting this fall</p>
+          </div>
+        </motion.div>
+      )
+    },
+    {
+      title: "May 2025 - Aug 2025",
+      content: (
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Embedded Systems Intern</b>
+              <button onClick={() => open(modalContents.heatherGlen)} className="text-sm text-neutral-500 underline">click me</button>
+            </div>
+            <p className="mb-4"><b>Heather Glen Village</b></p>
+            <p>Engineered embedded software for industrial devices, implemented low-level drivers, and automated firmware deployment tasks.</p>
+          </div>
+        </motion.div>
+      )
+    },
+    {
+      title: "Jan 2025 - Present",
+      content: (
+        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+          <div className="my-10">
+            <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
+              <b>Software Team Lead</b>
+              <button onClick={() => open(modalContents.aerialRobotics)} className="text-sm text-neutral-500 underline">click me</button>
             </div>
         
         </li>
