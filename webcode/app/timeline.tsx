@@ -76,7 +76,7 @@ export function TimelineDemo() {
   };
 
   const modalContents = {
-     heatherGlen: (
+    ericsson: (
       <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">Software Engineering Intern</h1>
         <p><b>Ericsson</b> – Ottawa, Ontario</p>
@@ -140,7 +140,7 @@ export function TimelineDemo() {
           <div className="my-10">
             <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
               <b>Software Engineering Intern</b>
-              <button onClick={() => open(modalContents.heatherGlen)} className="text-sm text-neutral-500 underline">click me</button>
+              <button onClick={() => open(modalContents.ericsson)} className="text-sm text-neutral-500 underline">click me</button>
             </div>
             <p className="mb-4"><b>Ericsson</b></p>
             <p>Will be starting this fall</p>
