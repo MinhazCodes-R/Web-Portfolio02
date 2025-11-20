@@ -76,15 +76,27 @@ export function TimelineDemo() {
   };
 
   const modalContents = {
-    ericsson: (
-      <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
-        <h1 className="text-blue-400 text-3xl font-bold">Software Engineering Intern</h1>
-        <p><b>Ericsson</b> – Ottawa, Ontario</p>
-        <ul className="list-disc ml-5 mt-3">
-          <li>Will be starting this fall</li>
-        </ul>
-      </div>
+   ericsson: (
+    <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
+      <h1 className="text-blue-400 text-3xl font-bold">Software Engineering Intern</h1>
+      <p><b>Ericsson</b> – Ottawa, Ontario</p>
+      <ul className="list-disc ml-5 mt-3 space-y-2">
+        <li>
+          Developed and deployed a distributed OpenTelemetry pipeline that consumed Kafka streams and exported
+          telemetry data into VictoriaMetrics, OpenSearch, and PostgreSQL—reducing metric polling latency from
+          15 minutes to under 3 minutes.
+        </li>
+        <li>
+          Built internal observability dashboards using AngularJS for the Cloud RAN team, enabling real-time visualization
+          and improving fault analysis speed by 30%.
+        </li>
+        <li>
+          Developed CI/CD pipelines in Jenkins and Spinnaker to automate validation, packaging, and deployment of CSAR artifacts.
+        </li>
+      </ul>
+    </div>
     ),
+
     heatherGlen: (
       <div className="bg-white w-[70vw] rounded-lg px-10 py-5 overflow-y-scroll" style={{ maxHeight: '80vh' }}>
         <h1 className="text-blue-400 text-3xl font-bold">Embedded Systems Intern</h1>
@@ -136,16 +148,28 @@ export function TimelineDemo() {
      {
       title: "Sep 2025 - Aug 2026",
       content: (
-        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+        <motion.div 
+          initial={{ opacity: 0, x: -100 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          viewport={{ once: true, amount: 0.2 }} 
+          transition={{ duration: 0.5 }}
+        >
           <div className="my-10">
             <div className="text-neutral-500 text-4xl mb-1 flex gap-3 items-center">
               <b>Software Engineering Intern</b>
-              <button onClick={() => open(modalContents.ericsson)} className="text-sm text-neutral-500 underline">click me</button>
+              <button onClick={() => open(modalContents.ericsson)} className="text-sm text-neutral-500 underline">
+                click me
+              </button>
             </div>
+
             <p className="mb-4"><b>Ericsson</b></p>
-            <p>Will be starting this fall</p>
+
+            <p>
+              Building distributed observability pipelines, real-time dashboards, and CI/CD systems for Cloud RAN.
+            </p>
           </div>
         </motion.div>
+
       )
     },
     {
