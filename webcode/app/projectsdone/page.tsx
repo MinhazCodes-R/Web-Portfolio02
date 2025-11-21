@@ -59,12 +59,12 @@ const MobileComponent = () => {
                 Visit The Github!
               </div></a>
               
-              <div className="my-2 text-blue-600">Take a look at the video demonstration on my Linkedin Post (click here)</div>
+              <div style={{paddingBottom:'15px'}} className="my-2 text-blue-600">Take a look at the video demonstration on my Linkedin Post (click here)</div>
               
               </div>
               
               
-              <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center"> <div className=" w-[100%]"><Image alt="asl translator image" src={aslimage}></Image></div></div>
+              <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center"> <div className=" w-[100%]"><Image style={{borderRadius:'10px'}} alt="asl translator image" src={aslimage}></Image></div></div>
             </div>
 
           </motion.div>
@@ -158,7 +158,7 @@ const MobileComponent = () => {
           
           </div>
 
-        <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center"><Image alt="Siesmic Group Photo" style={{width:'300px', border:'10px solid black'}} src={siemsic01}></Image></div>
+        <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center m-5"><Image alt="Siesmic Group Photo" style={{width:'300px',boxShadow: 'rgba(0, 0, 0, 0.75) 0px 5px 15px'}} src={siemsic01}></Image></div>
 
 
         </motion.div>
@@ -214,9 +214,9 @@ const MobileComponent = () => {
           </div>
 
           <div className="col-span-5 md:col-span-3 sm:col-span-5"> 
-            <div className="p-4" style={{}}>
-                <iframe style={{position:'relative',left:'0px'}} width="100%" height="100%" src="https://www.youtube.com/embed/9DItpDXlWFA?si=cGKhmg9wRjLFhtvK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                </div>
+
+                <iframe style={{position:'relative', width:'100%'}}src="https://www.youtube.com/embed/9DItpDXlWFA?si=cGKhmg9wRjLFhtvK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
           </div>
 
 
@@ -293,7 +293,7 @@ const DesktopComponent = () => {
             <div className="col-span-5 md:col-span-3 sm:col-span-5 text-red-700 flex">
 
 
-              <div className="ml-36 w-[500px]" ><Image src={aslimage} style={{border:'solid black 5px'}} alt="ASL translator"></Image></div>
+              <div className="ml-36 w-[500px]" style={{boxShadow: 'rgba(0, 0, 0, 0.35) -20px 5px 15px'}} ><Image src={aslimage}  alt="ASL translator"></Image></div>
 
 
 
@@ -338,7 +338,7 @@ const DesktopComponent = () => {
 
             <div className="w-[80vw] grid grid-cols-5 rounded-xl bg-white p-5"  style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
 
-              <div className="col-span-5 md:col-span-3  text-white flex justify-center"> <div className="w-[500px]"><Image src={travelagent} alt="travel agent"></Image></div></div>
+              <div className="col-span-5 md:col-span-3  text-white flex justify-center"> <div className="w-[500px]"><Image style={{}} src={travelagent} alt="travel agent"></Image></div></div>
               
               <div className="col-span-5 md:col-span-2  text-black">
 
@@ -400,8 +400,7 @@ const DesktopComponent = () => {
           <div className="my-2">bitsnotbytesnasa2024.netlify.app/</div>
           </div></div>
 
-        <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center"><Image alt="Siesmic Group Photo" style={{width:'300px', border:'10px solid black'}} src={siemsic01}></Image></div>
-
+        <div className="col-span-5 md:col-span-3 sm:col-span-5 text-white flex justify-center"><Image alt="Siesmic Group Photo" style={{width:'300px', boxShadow: 'rgba(0, 0, 0, 0.35) -20px 5px 15px'}} src={siemsic01}></Image></div>
 
         </motion.div>
 
@@ -444,7 +443,7 @@ const DesktopComponent = () => {
 
           <div className="col-span-5 md:col-span-3 sm:col-span-5"> 
             <div className="p-4" style={{}}>
-                <iframe style={{position:'relative',left:'0px'}} width="400" height="255" src="https://www.youtube.com/embed/9DItpDXlWFA?si=cGKhmg9wRjLFhtvK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe style={{position:'relative',left:'0px',boxShadow: 'rgba(0, 0, 0, 0.35) 20px 5px 15px'}} width="400" height="255" src="https://www.youtube.com/embed/9DItpDXlWFA?si=cGKhmg9wRjLFhtvK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
             </div>
             <div className="col-span-5 md:col-span-2 sm:col-span-5 text-black text-lg"> <div className="mt-4">
