@@ -76,20 +76,20 @@ export default function DashboardPage() {
       {activeTab === 'profile' && (
         <ProfileTab
           profile={data.profile}
-          onSave={p => handleSave({ ...data, profile: p })}
+          onSave={(p: any) => handleSave({ ...data, profile: p })}
           onUpload={handleFileUpload}
         />
       )}
       {activeTab === 'projects' && (
         <ProjectsTab
           projects={data.projects}
-          onSave={p => handleSave({ ...data, projects: p })}
+          onSave={(p: any) => handleSave({ ...data, projects: p })}
         />
       )}
       {activeTab === 'experience' && (
         <ExperienceTab
           experiences={data.experiences}
-          onSave={e => handleSave({ ...data, experiences: e })}
+          onSave={(e: any) => handleSave({ ...data, experiences: e })}
         />
       )}
     </div>
