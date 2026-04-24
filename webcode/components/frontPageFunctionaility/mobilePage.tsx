@@ -9,8 +9,6 @@ import React, {useRef} from "react";
 
 import BodyImport01 from "./bodyimport01";
 
-import Image from 'next/image'
-import ProfilePic from '../../app/IMG_5635.jpg'
 import BodyImport03 from './bodyimport03';
 
 import { FloatingDock } from "@/components/ui/floating-dock";
@@ -85,7 +83,7 @@ const links = [
 
 
 
-const MobilTopPage = () => {
+const MobilTopPage = ({ profile }) => {
 
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -148,7 +146,7 @@ const MobilTopPage = () => {
 
               <motion.div className='' style={{paddingLeft:'50px'}}>
 
-              <Image className="w-60 rounded-bl-xl rounded-tr-3xl" src={ProfilePic} alt="somethingelse"></Image>
+              <img className="w-60 rounded-bl-xl rounded-tr-3xl object-cover" src={profile?.profileImageUrl || '/app/IMG_5635.jpg'} alt="Profile Picture" />
 
 
               </motion.div>

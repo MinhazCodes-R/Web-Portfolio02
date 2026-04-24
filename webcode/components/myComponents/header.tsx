@@ -42,9 +42,36 @@ import {
 
 
     const [modalOpen, setModalOpen] = useState(false);
+    const [loginModalOpen, setLoginModalOpen] = useState(false);
+    const [password, setPassword] = useState("");
+    const [isLoggingIn, setIsLoggingIn] = useState(false);
+    const [loginError, setLoginError] = useState("");
     
     const close = () => setModalOpen(false);
     const open = () => setModalOpen(true);
+
+    const handleLogin = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setIsLoggingIn(true);
+      setLoginError("");
+      try {
+        const res = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ password }),
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          window.location.href = "/dashboard";
+        } else {
+          setLoginError(data.message || "Login failed");
+        }
+      } catch (err) {
+        setLoginError("Server error");
+      } finally {
+        setIsLoggingIn(false);
+      }
+    };
 
 
 
@@ -184,13 +211,10 @@ import {
               </motion.button>
             </Link>
           </nav>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            {/* <Button variant="ghost" asChild>
-              <Link href="/login">Log in</Link>
+          <div className="flex items-center justify-end md:flex-1 lg:w-0">
+             <Button variant="ghost" onClick={() => setLoginModalOpen(true)}>
+              Log in
             </Button>
-            <Button asChild className="ml-8">
-              <Link href="/signup">Sign up</Link>
-            </Button> */}
           </div>
         </div>
       </div>
@@ -198,6 +222,34 @@ import {
       {/* Mobile menu */}
       {modalOpen && <Modal modalOpen={modalOpen} contentdiv={content_display.menueitem} handleClose={close}/>}
       
+      {loginModalOpen && (
+        <Modal
+          modalOpen={loginModalOpen}
+          handleClose={() => setLoginModalOpen(false)}
+          contentdiv={
+            <div className="p-6 bg-white rounded-lg w-[90vw] md:w-[400px]">
+              <h2 className="text-2xl font-bold mb-4 text-black">Dashboard Login</h2>
+              <form onSubmit={handleLogin}>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className="w-full p-2 border border-gray-300 rounded mb-4 text-black"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  autoFocus
+                />
+                {loginError && <p className="text-red-500 text-sm mb-4">{loginError}</p>}
+                <div className="flex justify-end gap-2">
+                  <button type="button" onClick={() => setLoginModalOpen(false)} className="px-4 py-2 border rounded text-black hover:bg-gray-100">Cancel</button>
+                  <button type="submit" disabled={isLoggingIn} className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
+                    {isLoggingIn ? "Loading..." : "Login"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          }
+        />
+      )}
     </header>
   )
 }

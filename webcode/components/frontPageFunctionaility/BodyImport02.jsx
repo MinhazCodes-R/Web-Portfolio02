@@ -12,8 +12,6 @@ import { FlipWords } from "../ui/flip-words";
 import BodyImport01 from "./bodyimport01";
 import OddlyShapedProfilePhoto from "../myComponents/profileMinhaz"
 
-import Image from 'next/image'
-import ProfilePic from '../../app/IMG_5635.jpg'
 import { div, section } from "framer-motion/client";
 
 
@@ -24,7 +22,7 @@ import {motion, useTransform, useScroll} from 'framer-motion';
 
 
 
-const BodyImport02 = ( {scrollYProgress}) => {
+const BodyImport02 = ( {scrollYProgress, profile}) => {
     const targetRef = useRef(null);
 
     const x1= useTransform(scrollYProgress, [0,.5], ["0%","-200%"]);
@@ -64,7 +62,7 @@ const BodyImport02 = ( {scrollYProgress}) => {
 
                 <motion.div className='' style={{x:x2}}>
 
-                    <Image className="w-60 rounded-bl-xl rounded-tr-3xl" src={ProfilePic} alt="somethingelse"></Image>
+                    <img className="w-60 rounded-bl-xl rounded-tr-3xl object-cover" src={profile?.profileImageUrl || '/app/IMG_5635.jpg'} alt="Profile Picture" />
 
 
                 </motion.div>
@@ -99,7 +97,7 @@ else{
 
       <motion.div className='' style={{x:phone_x,y:y,display:'flex',justifyContent:'center',alignItems:'center'}}>
 
-      <Image className="w-60 rounded-bl-xl rounded-tr-3xl" src={ProfilePic} alt="somethingelse"></Image>
+      <img className="w-60 rounded-bl-xl rounded-tr-3xl object-cover" src={profile?.profileImageUrl || '/app/IMG_5635.jpg'} alt="Profile Picture" />
 
 
       </motion.div>

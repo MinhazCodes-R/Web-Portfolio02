@@ -1,0 +1,64 @@
+{
+  "profile": {
+    "name": "Minhaz",
+    "role": "Computer Engineering student at McMaster",
+    "email": "Minhazur.rakin101@gmail.com",
+    "phone": "647 568 8365",
+    "profileImageUrl": "/app/IMG_5635.jpg"
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "ASL Translator",
+      "description": "Developed a web tool to translate real time camera inputs of ASL hand signals to the corresponding English letter.",
+      "linkUrl": "https://github.com/MinhazCodes-R/SignDetector",
+      "linkText": "Visit The Github!",
+      "extraText": "Take a look at the video demonstration on my Linkedin Post (click here)",
+      "mediaType": "image",
+      "mediaUrl": "/app/asl-translator-image.png",
+      "gradient": "linear-gradient(to right, #3b82f6 0px, #a855f7 100px, #ec4899 200px)"
+    },
+    {
+      "id": "2",
+      "title": "Travel Planning Assistant",
+      "description": "Constructed a AI assistant that helps users plan out their next vacation. Takes custom messages, prices, and locations to suggest the perfect tourist attractions.",
+      "linkUrl": "#",
+      "linkText": "Visit The Github!",
+      "extraText": "(Hackathon Project)",
+      "mediaType": "image",
+      "mediaUrl": "/app/travel-agent.png",
+      "gradient": "linear-gradient(to right, #000000 0px, #525252 100px, #b6b6b6 200px)"
+    },
+    {
+      "id": "3",
+      "title": "Seismic Detector",
+      "description": "Using large data analysis techniques contructed an algorithim to accurately detect seismic activity from more than 100gb of lunar data.",
+      "linkUrl": "https://bitsnotbytesnasa2024.netlify.app/",
+      "linkText": "Visit the website to read more about the tools me and Bacem used!",
+      "extraText": "bitsnotbytesnasa2024.netlify.app/",
+      "mediaType": "image",
+      "mediaUrl": "/app/SeismicImage01.jpeg",
+      "gradient": "linear-gradient(to right, #000000 0px, #525252 100px, #b6b6b6 200px)"
+    },
+    {
+      "id": "4",
+      "title": "Rubik's Cubes Solver",
+      "description": "Created a Rubik's cube solver. This project had a python based graphics user interface (GUI) created using python's Tkinter library. After the user enters the cube colors into the GUI and presses the start button, the combination of motors goees ahead and solves the cube!",
+      "linkUrl": "#",
+      "linkText": "Check out the video!",
+      "extraText": "",
+      "mediaType": "video",
+      "mediaUrl": "https://www.youtube.com/embed/9DItpDXlWFA?si=cGKhmg9wRjLFhtvK",
+      "gradient": "linear-gradient(to right, #000000 0px, #525252 100px, #b6b6b6 200px)"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "1",
+      "title": "Sample Experience",
+      "company": "Company Name",
+      "date": "2023 - 2024",
+      "description": "Did some cool engineering work."
+    }
+  ]
+}

@@ -12,8 +12,6 @@ import { FlipWords } from "../ui/flip-words";
 import BodyImport01 from "./bodyimport01";
 import OddlyShapedProfilePhoto from "../myComponents/profileMinhaz"
 
-import Image from 'next/image'
-import ProfilePic from '../../app/IMG_5635.jpg'
 
 
 
@@ -24,7 +22,7 @@ import BodyImport03 from "./bodyimport03";
 
 
 
-const DeskTopPage = () => {
+const DeskTopPage = ({ profile }) => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
       target: targetRef,
@@ -60,7 +58,7 @@ const DeskTopPage = () => {
   
             <div className="sticky content-center top-56 z-20" style={{ marginLeft:"auto", marginRight:"auto"}}>
   
-                <BodyImport02 scrollYProgress={scrollYProgress}></BodyImport02>
+                <BodyImport02 scrollYProgress={scrollYProgress} profile={profile}></BodyImport02>
   
             </div>
   
