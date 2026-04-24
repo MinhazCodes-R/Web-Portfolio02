@@ -83,7 +83,7 @@ const links = [
 
 
 
-const MobilTopPage = ({ profile }) => {
+const MobilTopPage = ({ profile }: { profile?: any }) => {
 
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
