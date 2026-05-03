@@ -115,7 +115,7 @@ const HomePage = () => {
               <motion.div style={{ x: titleX }} className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Open to Summer 2027 internships
+                  Open to Spring 2027 internships
                 </div>
 
                 <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
@@ -179,7 +179,7 @@ const HomePage = () => {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900 leading-tight">
               I have worked with{' '}
               <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                <FlipWords words={flipWords} />
+                <FlipWords words={flipWords} duration={1200} />
               </span>
               <br />
               <span className="text-slate-500">and I&apos;m always looking to learn more.</span>
