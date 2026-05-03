@@ -1,42 +1,45 @@
 'use client';
-import Header from "@/components/myComponents/header"
 
-
-import React, {useRef} from "react";
-import {TimelineDemo} from "../timeline";
+import Header from "@/components/myComponents/header";
+import { TimelineDemo } from "../timeline";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { motion } from "framer-motion";
 
-
-
-
-const App = () => {
-
-
-
+const ExperiencePage = () => {
   return (
-    <section>
-      <div className="" style={{zIndex:'100',position:'fixed',top:'0'}}>
-      <Header></Header>
+    <div className="bg-slate-50 text-slate-900 min-h-screen">
+      <div className="sticky top-0 z-50 bg-white/75 backdrop-blur-md border-b border-slate-200/60">
+        <Header />
       </div>
-       <BackgroundBeamsWithCollision className="mt-20">
-            <h2 className="text-6xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
-              My
-              <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-                <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                  <span className=""> Experience.</span>
-                </div>
-                <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                  <span className=""> Experience.</span>
-                </div>
-              </div>
-            </h2>
-          </BackgroundBeamsWithCollision>
-      <TimelineDemo></TimelineDemo>
-      
-    </section>
-    )
 
-}
+      <BackgroundBeamsWithCollision className="min-h-[60vh]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative z-20 text-center px-6"
+        >
+          <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-slate-500 font-medium mb-6">
+            2024 — Present · 4 internships · 1 team lead
+          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-slate-900">
+            My{" "}
+            <span className="bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
+              Experience.
+            </span>
+          </h1>
+          <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            From observability pipelines and AI/ML systems at Ericsson to embedded C++ for industrial IoT —
+            here&apos;s where I&apos;ve learned, built, and shipped.
+          </p>
+        </motion.div>
+      </BackgroundBeamsWithCollision>
 
-export default App;
+      <div className="relative">
+        <TimelineDemo />
+      </div>
+    </div>
+  );
+};
 
+export default ExperiencePage;
