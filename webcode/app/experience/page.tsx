@@ -20,7 +20,7 @@ const ExperiencePage = () => {
           className="relative z-20 text-center px-6"
         >
           <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-slate-500 font-medium mb-6">
-            2024 — Present · 4 internships · 1 team lead
+            2024 — Present · 4 internships · 2 lead roles
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-slate-900">
             My{" "}
@@ -29,8 +29,8 @@ const ExperiencePage = () => {
             </span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            From observability pipelines and AI/ML systems at Ericsson to embedded C++ for industrial IoT —
-            here&apos;s where I&apos;ve learned, built, and shipped.
+            From observability pipelines and AI/ML systems at Ericsson, to embedded C++ for industrial IoT,
+            to healthcare SaaS at PointClickCare — here&apos;s where I&apos;ve learned, built, and shipped.
           </p>
         </motion.div>
       </BackgroundBeamsWithCollision>
