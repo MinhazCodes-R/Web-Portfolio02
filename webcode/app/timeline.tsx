@@ -30,6 +30,11 @@ import {
   siTailwindcss,
   siGit,
   siNodedotjs,
+  siOpenjdk,
+  siSpringboot,
+  siReact,
+  siKubernetes,
+  siHelm,
 } from "simple-icons";
 
 // Images
@@ -278,7 +283,7 @@ export function TimelineDemo() {
   const modalContents = {
     pointClickCare: (
       <DetailContent
-        role="Software Engineering Intern"
+        role="Software Engineering Intern, Clinical Platform"
         company="PointClickCare"
         location="Mississauga, Ontario"
         dates="May 2026 – Aug 2026"
@@ -286,10 +291,12 @@ export function TimelineDemo() {
         logo={<PointClickCareLogo />}
         onClose={close}
         highlights={[
-          <>Incoming intern, joining North America&apos;s leading <strong>senior-care SaaS platform</strong> for Summer 2026.</>,
-          <>Will be working on <strong>backend services and data pipelines</strong> serving thousands of long-term and post-acute care providers.</>,
+          <>Joining the <strong>Clinical Platform</strong> team at North America&apos;s leading <strong>long-term and post-acute care SaaS</strong> for Summer 2026, working in a <strong>HIPAA-regulated environment</strong> on workflows that touch protected health information.</>,
+          <>Working across the cloud-native <strong>Spring Boot 3 macroservice</strong> (20+ domain modules — observations, allergies, care plans, assessments, encounter notes, and more) backing 17 React micro-frontends through a Backend-for-Frontend pattern.</>,
+          <>Also contributing to the legacy <strong>web-core</strong> enterprise monolith — a 29-module Maven project undergoing active modernization (stored-procedure → Java DAO migration, WeObject replacement, spec-driven API code generation) behind feature-flag parity gates.</>,
+          <>Stack spans <strong>Java 11/17, Spring 5 + Spring Boot 3.5, React MFEs, SQL Server on Azure, AKS, Helm, Jenkins</strong>, with quality gates via Checkstyle / PMD / SonarQube / Fortify.</>,
         ]}
-        stack={["Python", "Node.js", "PostgreSQL", "AWS", "Docker"]}
+        stack={["Java 11/17", "Spring Boot 3.5", "React MFEs", "SQL Server", "Azure Kubernetes Service", "Helm", "Maven", "Jenkins", "JUnit 5", "Cypress", "K6", "Pact"]}
       />
     ),
 
@@ -321,7 +328,7 @@ export function TimelineDemo() {
         logo={<EricssonLogo />}
         onClose={close}
         highlights={[
-          <>Developed and deployed a distributed <strong>OpenTelemetry pipeline</strong> consuming Kafka streams and exporting data to <strong>VictoriaMetrics, OpenSearch, and PostgreSQL</strong>, improving data polling rates from <strong>15 min to under 3 min</strong>.</>,
+          <>Developed and deployed a distributed <strong>OpenTelemetry pipeline</strong> consuming Kafka streams and exporting data to <strong>VictoriaMetrics, OpenSearch, and PostgreSQL</strong> — handling <strong>10M+ logs/day</strong> and improving polling latency from <strong>15 min to under 3 min</strong> (~80% reduction).</>,
           <>Built internal observability dashboards using <strong>AngularJS</strong>, enabling real-time visualization and improving fault analysis speed by <strong>30%</strong> for the Cloud RAN team.</>,
           <>Developed CI/CD pipelines in <strong>Jenkins and Spinnaker</strong> to build, validate, and deploy CSAR packages, improving release efficiency by <strong>15%</strong>.</>,
         ]}
@@ -331,19 +338,20 @@ export function TimelineDemo() {
 
     taylorSystems: (
       <DetailContent
-        role="Embedded Systems Intern"
+        role="Engineering Lead"
         company="Taylor Systems"
         location="Mississauga, Ontario"
         dates="May 2025 – Aug 2025"
         accent="from-orange-400 via-amber-400 to-yellow-400"
         onClose={close}
         highlights={[
+          <>Led a <strong>10-engineer cohort</strong> at a smart-home IoT startup — ran daily standups, owned roadmap and ticket triage, and scoped projects directly with company chairmen for executive approval and resource allocation.</>,
           <>Built firmware to control <strong>12+ industrial devices via Modbus RTU over RS-485</strong>, extending communication range to <strong>1.2 km</strong> and reducing packet loss by <strong>40%</strong>.</>,
           <>Wrote <strong>I²C and UART drivers for ESP32 microcontrollers</strong> to stream sensor data with latency under <strong>50 ms</strong>.</>,
-          <>Built a modular WebSocket-heavy backend to relay sensor data from IoT devices, with real-time alerting and historical metrics via <strong>Prometheus and Grafana</strong>.</>,
-          <>Scripted a deployment pipeline that automated <strong>90% of flashing and validation</strong>, reducing technician setup time from <strong>45 minutes to under 5 minutes</strong>.</>,
+          <>Built a real-time <strong>WebSocket backend</strong> for IoT sensor streams with Prometheus metrics, lifting throughput by <strong>300%</strong>.</>,
+          <>Scripted a Python + Bash deployment pipeline that automated <strong>90% of flashing and validation</strong>, reducing technician setup time from <strong>45 minutes to under 5 minutes</strong>.</>,
         ]}
-        stack={["C++", "ESP32", "Modbus RTU", "RS-485", "Python", "WebSocket", "Prometheus", "Grafana"]}
+        stack={["C++", "ESP32", "Modbus RTU", "RS-485", "Python", "Bash", "TypeScript", "WebSocket", "MQTT", "Prometheus"]}
       />
     ),
 
@@ -402,21 +410,22 @@ export function TimelineDemo() {
       title: "May 2026 - Aug 2026",
       content: (
         <EntryCard
-          role="Software Engineering Intern"
+          role="SWE Intern, Clinical Platform"
           company="PointClickCare"
           badge={{ label: "Upcoming", tone: "emerald" }}
-          blurb="Joining the SaaS platform serving North America's senior-care providers. Backend and data work, starting Summer 2026."
+          blurb="Joining PointClickCare's Clinical Platform team for Summer 2026 — building HIPAA-regulated healthcare SaaS for long-term and post-acute care across a Spring Boot 3 macroservice (20+ domain modules, 17 React micro-frontends) and a 29-module legacy enterprise monolith undergoing active modernization."
           onOpenDetails={() => open(modalContents.pointClickCare)}
           accent="from-emerald-400 via-teal-400 to-cyan-400"
           logo={<PointClickCareLogo />}
         >
           <TechRow
             items={[
-              { icon: siPython, label: "Python" },
-              { icon: siNodedotjs, label: "Node.js" },
-              { icon: siPostgresql, label: "PostgreSQL" },
-              { icon: siAmazonwebservices, label: "AWS" },
-              { icon: siDocker, label: "Docker" },
+              { icon: siOpenjdk, label: "Java" },
+              { icon: siSpringboot, label: "Spring Boot" },
+              { icon: siReact, label: "React" },
+              { icon: siKubernetes, label: "AKS" },
+              { icon: siHelm, label: "Helm" },
+              { icon: siJenkins, label: "Jenkins" },
             ]}
           />
         </EntryCard>
@@ -475,9 +484,9 @@ export function TimelineDemo() {
       title: "May 2025 - Aug 2025",
       content: (
         <EntryCard
-          role="Embedded Systems Intern"
+          role="Engineering Lead"
           company="Taylor Systems"
-          blurb="Firmware for 12+ industrial devices over Modbus RTU / RS-485 (1.2 km range, 40% packet-loss reduction), I²C and UART drivers for ESP32 with sub-50 ms latency, plus a WebSocket backend with Prometheus / Grafana observability. Cut technician setup from 45 min to under 5 min."
+          blurb="Led a 10-engineer cohort at a smart-home IoT startup. Shipped firmware for 12+ industrial devices over Modbus RTU / RS-485 (1.2 km range, 40% packet-loss reduction), ESP32 I²C / UART drivers with sub-50 ms latency, and a real-time WebSocket backend with Prometheus metrics that boosted throughput 300%. Cut technician setup from 45 min to under 5 min."
           onOpenDetails={() => open(modalContents.taylorSystems)}
           accent="from-orange-400 via-amber-400 to-yellow-400"
         >
