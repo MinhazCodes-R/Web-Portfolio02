@@ -31,10 +31,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        {/* If you want to manually add a favicon, style import, etc. */}
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body>
         {children}
         <ChatWidget />
