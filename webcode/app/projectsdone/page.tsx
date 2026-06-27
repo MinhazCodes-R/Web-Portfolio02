@@ -1,14 +1,17 @@
 'use client';
 
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Header from "@/components/myComponents/header";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { LampDemo } from "../lampdisplay";
 import Image, { StaticImageData } from "next/image";
 
 import siemsic01 from "@/images/SeismicImage01.jpeg";
 import aslimage from "@/images/asl-translator-image.png";
 import travelagent from "@/images/travel-agent.png";
+import minihabitsLogo from "@/images/minihabits-logo.png";
+
+type Mode = "projects" | "startups";
 
 type Project = {
   id: string;
@@ -100,6 +103,36 @@ const projects: Project[] = [
   },
 ];
 
+const startups: Project[] = [
+  {
+    id: "minihabits",
+    name: "miniHabits",
+    blurb: "A minimalist habit tracker that respects your time and attention.",
+    description:
+      "Web app is live and shipped — track daily habits, log completions, see streaks on a calendar, and pull up analytics on your consistency over time. A native SwiftUI iOS companion is in active development, backed by the same Supabase schema and auth layer. Built solo end-to-end.",
+    tags: ["Next.js", "SwiftUI", "Supabase", "Postgres", "Vercel"],
+    year: "2026",
+    links: [
+      { label: "Visit web app", href: "https://habit-tracking-beige.vercel.app/", primary: true },
+      { label: "GitHub", href: "https://github.com/MinhazCodes-R/HabitTracking-IOS-" },
+    ],
+    media: (
+      <div className="relative w-full h-full flex items-center justify-center p-8">
+        <div className="relative aspect-square w-48 sm:w-56 rounded-3xl bg-slate-950 shadow-[0_20px_50px_-12px_rgba(16,185,129,0.35)] ring-1 ring-emerald-500/30 flex items-center justify-center overflow-hidden">
+          <Image
+            src={minihabitsLogo}
+            alt="miniHabits logo"
+            className="object-contain p-4"
+            fill
+            sizes="(min-width: 640px) 224px, 192px"
+          />
+        </div>
+      </div>
+    ),
+    accent: "from-emerald-400 via-teal-500 to-cyan-500",
+  },
+];
+
 type FunProject = {
   name: string;
   blurb: string;
@@ -136,7 +169,15 @@ function ProjectImage({ src, alt }: { src: StaticImageData; alt: string }) {
   );
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({
+  project,
+  index,
+  kindLabel = "Project",
+}: {
+  project: Project;
+  index: number;
+  kindLabel?: string;
+}) {
   const reversed = index % 2 === 1;
   return (
     <motion.section
@@ -165,7 +206,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <span
                   className={`text-xs font-semibold uppercase tracking-wider bg-gradient-to-r ${project.accent} bg-clip-text text-transparent`}
                 >
-                  Project
+                  {kindLabel}
                 </span>
               </div>
 
@@ -261,7 +302,52 @@ function FunProjectCard({ project, index }: { project: FunProject; index: number
   );
 }
 
+function ModeToggle({ mode, onChange }: { mode: Mode; onChange: (m: Mode) => void }) {
+  const options: { value: Mode; label: string }[] = [
+    { value: "projects", label: "Projects" },
+    { value: "startups", label: "Startups" },
+  ];
+  return (
+    <div className="flex justify-center">
+      <div
+        role="tablist"
+        aria-label="Toggle between projects and startups"
+        className="relative inline-flex items-center gap-1 rounded-full border border-white/10 bg-slate-900/80 p-1 backdrop-blur-xl shadow-[0_8px_40px_-12px_rgba(56,189,248,0.25)]"
+      >
+        {options.map((opt) => {
+          const active = mode === opt.value;
+          return (
+            <button
+              key={opt.value}
+              role="tab"
+              aria-selected={active}
+              onClick={() => onChange(opt.value)}
+              className={`relative z-10 rounded-full px-5 py-2 text-sm font-semibold transition-colors duration-300 ${
+                active ? "text-white" : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              {active && (
+                <motion.span
+                  layoutId="mode-toggle-pill"
+                  className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-500 shadow-[0_4px_20px_rgba(56,189,248,0.45)]"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+              <span className="relative">{opt.label}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 const ProjectsPage = () => {
+  const [mode, setMode] = useState<Mode>("projects");
+  const showProjects = mode === "projects";
+  const activeList = showProjects ? projects : startups;
+  const kindLabel = showProjects ? "Project" : "Startup";
+
   return (
     <div className="bg-slate-950 min-h-screen">
       <div className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md">
@@ -269,44 +355,59 @@ const ProjectsPage = () => {
       </div>
 
       <div className="h-[80vh]" style={{ overflow: "hidden" }}>
-        <LampDemo />
+        <LampDemo key={mode} word={showProjects ? "Projects" : "Startups"} />
       </div>
 
-      <div className="relative -mt-32 pb-32">
-        <div className="space-y-16 sm:space-y-20">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
-          ))}
-        </div>
+      <div className="relative pt-4 pb-16">
+        <ModeToggle mode={mode} onChange={setMode} />
       </div>
 
-      <section id="funprojects" style={{ scrollMarginTop: "100px" }} className="relative pb-32">
-        <div className="mx-auto w-[92vw] max-w-6xl">
+      <div className="relative pb-32">
+        <AnimatePresence mode="wait">
           <motion.div
+            key={mode}
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="space-y-16 sm:space-y-20"
           >
-            <p className="text-sm uppercase tracking-[0.2em] text-slate-500 font-medium mb-4">
-              For fun
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-pink-400 via-fuchsia-400 to-orange-400 bg-clip-text text-transparent inline-block leading-[1.15] pb-2">
-              Fun Side Projects
-            </h2>
-            <p className="mt-4 text-slate-400 max-w-xl mx-auto">
-              Silly stuff I built because I wanted to. No roadmap, no users, no shame.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {funProjects.map((p, i) => (
-              <FunProjectCard key={p.name} project={p} index={i} />
+            {activeList.map((item, i) => (
+              <ProjectCard key={item.id} project={item} index={i} kindLabel={kindLabel} />
             ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {showProjects && (
+        <section id="funprojects" style={{ scrollMarginTop: "100px" }} className="relative pb-32">
+          <div className="mx-auto w-[92vw] max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <p className="text-sm uppercase tracking-[0.2em] text-slate-500 font-medium mb-4">
+                For fun
+              </p>
+              <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-pink-400 via-fuchsia-400 to-orange-400 bg-clip-text text-transparent inline-block leading-[1.15] pb-2">
+                Fun Side Projects
+              </h2>
+              <p className="mt-4 text-slate-400 max-w-xl mx-auto">
+                Silly stuff I built because I wanted to. No roadmap, no users, no shame.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {funProjects.map((p, i) => (
+                <FunProjectCard key={p.name} project={p} index={i} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 };
