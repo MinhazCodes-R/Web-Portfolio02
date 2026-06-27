@@ -17,7 +17,7 @@ const greeting: Message = {
 };
 
 const cannedReply =
-  "Thanks for reaching out! I'm Minhaz's portfolio chatbot — full LLM integration is on the way. Soon I'll be able to answer detailed questions about his experience, projects, and tech stack. In the meantime, you can reach Minhaz directly at minhazur.rakin101@gmail.com or browse the Experience, Projects, and Startups tabs.";
+  "Thanks for reaching out! I'm Minhaz's portfolio chatbot — full LLM integration is on the way. Soon I'll be able to answer detailed questions about his experience, projects, and tech stack. In the meantime, you can reach Minhaz directly at minhazur.rakin101@gmail.com or browse the Experience, Projects, and Content tabs.";
 
 const ChatWidget = () => {
   const [open, setOpen] = useState(false);

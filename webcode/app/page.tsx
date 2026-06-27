@@ -57,10 +57,10 @@ const featured = [
     accent: 'from-cyan-500 via-sky-500 to-indigo-500',
   },
   {
-    label: 'Startups',
-    title: 'What I am shipping',
-    blurb: 'miniHabits — a habit tracker live on the web with a SwiftUI iOS companion in active development.',
-    href: '/startups',
+    label: 'Content',
+    title: 'What I am posting',
+    blurb: 'Engineering videos, posts, and notes I share online. New material is on the way.',
+    href: '/content',
     accent: 'from-emerald-500 via-teal-500 to-cyan-500',
   },
 ];
