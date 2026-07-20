@@ -4,6 +4,24 @@ import Header from "@/components/myComponents/header";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+type ContentItem = {
+  title: string;
+  description: string;
+  url: string;
+  thumbnail: string;
+  type: string;
+};
+
+const contentItems: ContentItem[] = [
+  {
+    title: "I'm Solving All 150 NeetCode Problems | #1: Two Sum",
+    description: "Kicking off a series working through all 150 NeetCode problems, starting with Two Sum.",
+    url: "https://youtu.be/NqDbhwUAUVw?si=UsNOKyAKKgC7jKSu",
+    thumbnail: "https://i.ytimg.com/vi/NqDbhwUAUVw/hqdefault.jpg",
+    type: "YouTube",
+  },
+];
+
 const ContentPage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
@@ -33,26 +51,62 @@ const ContentPage = () => {
       </section>
 
       <section className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pb-24">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white"
-        >
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
-          <div className="px-8 py-20 sm:px-12 sm:py-28 text-center">
-            <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium uppercase tracking-wider text-slate-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-              In progress
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
-              Coming soon.
-            </h2>
-            <p className="mt-4 text-base sm:text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">
-              I&apos;m putting together a feed of social media content tied to my engineering work. Check back here as posts go live.
-            </p>
+        {contentItems.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {contentItems.map((item, index) => (
+              <motion.a
+                key={item.url}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 + index * 0.05, ease: "easeOut" }}
+                className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white transition-shadow hover:shadow-lg"
+              >
+                <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-medium mb-2">
+                    {item.type}
+                  </p>
+                  <h3 className="text-lg font-semibold text-slate-900 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.a>
+            ))}
           </div>
-        </motion.div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white"
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
+            <div className="px-8 py-20 sm:px-12 sm:py-28 text-center">
+              <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium uppercase tracking-wider text-slate-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
+                In progress
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
+                Coming soon.
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-slate-500 max-w-xl mx-auto leading-relaxed">
+                I&apos;m putting together a feed of social media content tied to my engineering work. Check back here as posts go live.
+              </p>
+            </div>
+          </motion.div>
+        )}
       </section>
 
       <section className="border-t border-slate-200 bg-white">
