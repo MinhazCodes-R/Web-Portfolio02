@@ -22,6 +22,30 @@ const contentItems: ContentItem[] = [
   },
 ];
 
+const throwbackItems: ContentItem[] = [
+  {
+    title: "Area of circle with integration",
+    description: "",
+    url: "https://www.youtube.com/watch?v=lQR-EAbDLmo&t=81s",
+    thumbnail: "https://i.ytimg.com/vi/lQR-EAbDLmo/hqdefault.jpg",
+    type: "YouTube",
+  },
+  {
+    title: "Derivative of function inside function",
+    description: "",
+    url: "https://www.youtube.com/watch?v=4A8VBt65VRs&t=138s",
+    thumbnail: "https://i.ytimg.com/vi/4A8VBt65VRs/hqdefault.jpg",
+    type: "YouTube",
+  },
+  {
+    title: "Simplify any polynomial",
+    description: "",
+    url: "https://www.youtube.com/watch?v=9cqLdMxG3d0&t=191s",
+    thumbnail: "https://i.ytimg.com/vi/9cqLdMxG3d0/hqdefault.jpg",
+    type: "YouTube",
+  },
+];
+
 const ContentPage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
@@ -107,6 +131,46 @@ const ContentPage = () => {
             </div>
           </motion.div>
         )}
+      </section>
+
+      <section className="border-t border-slate-200 bg-slate-50/60">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-14">
+          <div className="rounded-3xl border border-dashed border-slate-300 bg-white/60 px-6 py-8 sm:px-8">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-medium mb-1">
+              Where it started
+            </p>
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mb-6">
+              I had a passion for math even as a kid, making calculus explainer videos on YouTube at 12.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {throwbackItems.map((item) => (
+                <a
+                  key={item.url}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-shadow hover:shadow-md"
+                >
+                  <div className="relative aspect-video w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400 font-medium mb-1">
+                      {item.type} · age 12
+                    </p>
+                    <h4 className="text-sm font-medium text-slate-800 leading-snug">
+                      {item.title}
+                    </h4>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="border-t border-slate-200 bg-white">
