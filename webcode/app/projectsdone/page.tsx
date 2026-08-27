@@ -21,6 +21,7 @@ type Project = {
   tags: string[];
   year: string;
   links: { label: string; href: string; primary?: boolean }[];
+  note?: string;
   media: ReactNode;
   accent: string;
 };
@@ -36,7 +37,10 @@ const projects: Project[] = [
     year: "2024",
     links: [
       { label: "GitHub", href: "https://github.com/MinhazCodes-R/SignDetector", primary: true },
-      { label: "LinkedIn demo", href: "#" },
+      {
+        label: "LinkedIn demo",
+        href: "https://www.linkedin.com/posts/minhazur-rakin_wow-this-post-was-long-overdue-had-activity-7336959400865079296-DX0D",
+      },
     ],
     media: <ProjectImage src={aslimage} alt="ASL Translator interface" />,
     accent: "from-blue-500 via-purple-500 to-pink-500",
@@ -49,7 +53,8 @@ const projects: Project[] = [
       "Built at a hackathon. Takes custom messages, budgets, and locations and suggests the perfect tourist attractions and itineraries through a conversational interface.",
     tags: ["AI Agent", "Hackathon", "LLM", "Travel"],
     year: "2024",
-    links: [{ label: "GitHub", href: "#", primary: true }],
+    links: [],
+    note: "Repository link coming soon.",
     media: <ProjectImage src={travelagent} alt="Travel agent interface" />,
     accent: "from-cyan-400 via-sky-500 to-indigo-500",
   },
@@ -259,6 +264,11 @@ function ProjectCard({
                       {link.label}
                     </a>
                   ),
+                )}
+                {project.note && (
+                  <p className="inline-flex items-center rounded-lg border border-dashed border-white/15 px-4 py-2.5 text-sm text-slate-400">
+                    {project.note}
+                  </p>
                 )}
               </div>
             </div>
