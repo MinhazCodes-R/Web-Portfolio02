@@ -20,6 +20,20 @@ const contentItems: ContentItem[] = [
     thumbnail: "https://i.ytimg.com/vi/NqDbhwUAUVw/hqdefault.jpg",
     type: "YouTube",
   },
+  {
+    title: "I'm Solving All 150 NeetCode Problems | #2: Number of Connected Components in an Undirected Graph",
+    description: "Problem #2 in the NeetCode 150 series: Number of Connected Components in an Undirected Graph.",
+    url: "https://www.youtube.com/watch?v=g9E4klNhXWY",
+    thumbnail: "https://i.ytimg.com/vi/g9E4klNhXWY/hqdefault.jpg",
+    type: "YouTube",
+  },
+  {
+    title: "I'm Solving All 150 NeetCode Problems | #3 & 4: House Robber I & II",
+    description: "Problems #3 and #4 in the NeetCode 150 series: House Robber I and II.",
+    url: "https://www.youtube.com/watch?v=ssAjBQmHbPQ",
+    thumbnail: "https://i.ytimg.com/vi/ssAjBQmHbPQ/hqdefault.jpg",
+    type: "YouTube",
+  },
 ];
 
 const throwbackItems: ContentItem[] = [

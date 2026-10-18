@@ -35,6 +35,7 @@ import {
   siReact,
   siKubernetes,
   siHelm,
+  siSalesforce,
 } from "simple-icons";
 
 // Images
@@ -210,7 +211,7 @@ type EntryProps = {
   company: string;
   badge?: { label: string; tone: "emerald" | "indigo" | "amber" };
   blurb: string;
-  onOpenDetails: () => void;
+  onOpenDetails?: () => void;
   accent: string;
   logo?: ReactNode;
   children?: ReactNode;
@@ -256,15 +257,17 @@ const EntryCard = ({ role, company, badge, blurb, onOpenDetails, accent, logo, c
         </p>
         <p className="text-slate-600 leading-relaxed">{blurb}</p>
         {children}
-        <button
-          onClick={onOpenDetails}
-          className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
-        >
-          View full details
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 12h14M13 5l7 7-7 7" />
-          </svg>
-        </button>
+        {onOpenDetails && (
+          <button
+            onClick={onOpenDetails}
+            className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+          >
+            View full details
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   </motion.div>
@@ -406,6 +409,20 @@ export function TimelineDemo() {
   };
 
   const data: TimelineItem[] = [
+    {
+      title: "Sep 2026 - Dec 2026",
+      content: (
+        <EntryCard
+          role="Software Engineering Intern"
+          company="Scotiabank"
+          badge={{ label: "Current", tone: "emerald" }}
+          blurb="Implementing a more efficient, AI-driven solution for Salesforce at Scotiabank."
+          accent="from-red-400 via-rose-400 to-orange-400"
+        >
+          <TechRow items={[{ icon: siSalesforce, label: "Salesforce" }]} />
+        </EntryCard>
+      ),
+    },
     {
       title: "May 2026 - Aug 2026",
       content: (
