@@ -47,7 +47,7 @@ import bjic03 from "../images/BJIC_overview03.png";
 import bjic04 from "../images/BJIC_payment.png";
 import ericssonLogo from "../images/ericsson-logo.jpeg";
 import pccLogo from "../images/pointclickcare-logo.jpg";
-import scotiabankLogo from "../images/scotiabank-logo.svg";
+import scotiabankLogo from "../images/scotiabank-logo.png";
 
 // Type for each timeline item
 interface TimelineItem {
@@ -114,13 +114,13 @@ const PointClickCareLogo = () => (
 );
 
 const ScotiabankLogo = () => (
-  <div className="flex h-12 sm:h-14 items-center rounded-xl border border-slate-200 bg-white px-3 shadow-sm">
+  <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
     <Image
       src={scotiabankLogo}
       alt="Scotiabank logo"
-      width={115}
-      height={28}
-      className="h-7 w-auto"
+      width={56}
+      height={56}
+      className="object-cover w-full h-full"
     />
   </div>
 );
